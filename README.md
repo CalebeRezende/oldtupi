@@ -15,3 +15,5 @@ Este repositório contém um tradutor de português para tupi antigo usando o mo
 - pandas
 - openpyxl
 
+
+<!-- Teste de workflow no Google Colab -->
