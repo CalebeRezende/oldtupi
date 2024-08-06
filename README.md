@@ -1,4 +1,5 @@
 # Old Tupi Translator
+Tupi Antigo- Tradutor
 
 Este repositório contém um tradutor de português para tupi antigo usando o modelo `facebook/nllb-200-distilled-1.3B`.
 
