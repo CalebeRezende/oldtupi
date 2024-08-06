@@ -32,4 +32,4 @@ jobs:
         git config --local user.name "Your Name"
         git add Tupi_citations_(1).xlsx
         git commit -m "Add translated file"
-        git push origin main  # ou 'master'
+        git push origin home  # ou 'master'
