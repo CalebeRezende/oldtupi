@@ -4,7 +4,7 @@ Este repositório contém um tradutor de português para tupi antigo usando o mo
 
 ## Como usar
 
-1. Adicione suas frases em português no arquivo `data/Citações em tupi (1).xlsx` na coluna `Portuguese`.
+1. Adicione suas frases em português no arquivo `data/Citações em tupi (1).xlsx` na coluna `Tradução`.
 2. Ao fazer push no branch `main`, o GitHub Actions irá automaticamente traduzir as frases e salvar o resultado em `data/Traduzido em Tupi.xlsx`.
 
 ## Dependências
