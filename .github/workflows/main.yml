@@ -3,7 +3,7 @@ name: Translate Portuguese to Tupi
 on:
   push:
     branches:
-      - home  # ou 'master' se for o caso
+      - home
 
 jobs:
   translate:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3  # Atualizado para v3
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4  # Atualizado para v4
       with:
         python-version: '3.x'
 
@@ -32,4 +32,4 @@ jobs:
         git config --local user.name "Your Name"
         git add Tupi_citations_(1).xlsx
         git commit -m "Add translated file"
-        git push origin home  # ou 'master'
+        git push origin home
