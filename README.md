@@ -15,8 +15,7 @@ O modelo facebook/nllb-200-distilled-600M foi treinado usando o conjunto de dado
 
 O treinamento foi feito utilizando uma abordagem baseada em Sparsely Gated Mixture of Experts (MoE), que ajuda a modelar traduções de alta qualidade mesmo para idiomas com poucos dados disponíveis. A performance do modelo foi avaliada em mais de 40.000 direções de tradução diferentes, utilizando tanto avaliações humanas quanto métricas automáticas como BLEU e chrF++.
 
-
-Rascunho título: 
+## Título de uma possível escrita: 
 translation into extinct languages ​​using the proximal languages ​​method
 tradução para línguas extintas pelo método das linguagens proximais
 
