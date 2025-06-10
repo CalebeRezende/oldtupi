@@ -1,0 +1,1490 @@
+\documentclass[
+    12pt,                   % Tamanho da fonte
+    openright,              % Capítulos começam em páginas ímpares
+    oneside,                % Impressão de um lado só
+    a4paper,                % Tamanho do papel A4
+    chapter=TITLE,          % Formato dos títulos de capítulos
+    section=TITLE,          % Formato dos títulos de seções
+    subsection=TITLE,       % Formato dos títulos de subseções
+    subsubsection=TITLE,    % Formato dos títulos de subsubseções
+    sumario=tradicional     % Formato do sumário
+]{abntex2}
+\usepackage{titlesec} % Para customizar títulos
+
+% Configurar títulos dos capítulos
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\Large} % Fonte normal, negrito, tamanho "Large" (~14pt no Word)
+  {\thechapter}{1em}{}         % Numeração do capítulo
+  []
+  
+% Configurar títulos das seções
+\titleformat{\section}
+  {\normalfont\bfseries\large} % Fonte normal, negrito, tamanho "large"
+  {\thesection}{1em}{}
+
+% Configurar títulos das subseções
+\titleformat{\subsection}
+  {\normalfont\bfseries\normalsize} % Fonte normal, negrito, tamanho normal
+  {\thesubsection}{1em}{}
+
+% Configurar títulos das subsubseções
+\titleformat{\subsubsection}
+  {\normalfont\bfseries\normalsize}
+  {\thesubsubsection}{1em}{}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[hang]
+  {\normalfont\bfseries\Large}
+  {Capítulo \thechapter.}{1em}{}
+
+% Reduzir espaçamento antes/depois dos capítulos
+\titlespacing*{\chapter}{0pt}{1em}{1em}
+
+% Seção mais compacta também
+\titlespacing*{\section}{0pt}{1em}{0.5em}
+\titlespacing*{\subsection}{0pt}{0.8em}{0.3em}
+\titlespacing*{\subsubsection}{0pt}{0.5em}{0.2em}
+
+\usepackage{setspace}
+% Pacotes essenciais
+\renewcommand{\familydefault}{\sfdefault} % Para Arial
+\usepackage[T1]{fontenc}   % Codificação correta de caracteres
+\usepackage[utf8]{inputenc}% Suporte para acentuação
+\usepackage[brazil]{babel} % Português do Brasil
+\usepackage{indentfirst}   % Indenta o primeiro parágrafo de cada seção
+\usepackage{graphicx}      % Inclusão de imagens
+\usepackage{microtype}     % Melhora a justificação dos textos
+\usepackage{hyperref}      % Hiperlinks
+\usepackage{cite}          % Citações padrão ABNT
+\usepackage{setspace}      % Espaçamento
+\usepackage{titlesec}      % Personalização de títulos
+\usepackage{fancyhdr}      % Cabeçalhos e rodapés
+\usepackage{listings}      % Para código fonte
+\usepackage{color}         % Para cores no texto
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{breakurl}
+\usepackage[breaklinks]{hyperref}
+
+\usepackage{ragged2e}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+\titleformat{\section}{\bfseries\MakeUppercase}{\thesection}{1em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\bfseries\itshape}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}{\itshape}{\theparagraph}{1em}{}
+\setlength{\parskip}{6pt}
+
+
+
+% Configurações de espaçamento e parágrafo
+\setlength{\parindent}{1.25cm}  % Indentação de parágrafos
+\setlength{\parskip}{0cm}       % Espaçamento entre parágrafos
+\DoubleSpacing                    % Espaçamento duplo
+
+% Informações da Capa
+\titulo{Tupi Antigo: Desenvolvimento de Ferramentas Computacionais para Tradução e Preservação Cultural}
+\autor{Calebe Macena Rezende}
+\instituicao{Universidade de São Paulo\\ Instituto de Matemática e Estatística - IME}
+\local{São Paulo}
+\data{2024}
+\orientador{Prof. Dr. Marcelo Finger}
+\tipotrabalho{Dissertação de Mestrado apresentada ao Programa de Pós-Graduação em Ciência da Computação da Universidade de São Paulo}
+\preambulo{Trabalho apresentado para a obtenção do título de Mestre em Ciências da Computação.}
+
+
+\begin{document}
+\onehalfspacing
+
+
+
+\begin{titlepage}
+    \begin{center}
+        {\Large\textbf{UNIVERSIDADE DE SÃO PAULO}}\\[1.5cm]
+        
+        {\large{CALEBE MACENA REZENDE}}\\[6cm]
+        
+{\LARGE\textbf{Tupi Antigo: Desenvolvimento de Ferramentas Computacionais para Tradução e Preservação Cultural}}\\
+{\large Refinamento de Tradução Automática por Meio de Linguagens Proximais} \\ [10cm]
+
+        
+        {\large SÃO PAULO}\\[0.5cm]
+        {\large 2024}
+    \end{center}
+\end{titlepage}
+
+\clearpage
+\chapter*{}
+
+
+\begin{center}
+    \Large\textbf{CALEBE MACENA REZENDE}
+\end{center}
+
+
+\begin{center}
+     \textbf{TUPI ANTIGO:} DESENVOLVIMENTO DE FERRAMENTAS COMPUTACIONAIS PARA TRADUÇÃO E PRESERVAÇÃO CULTURAL
+\end{center}
+
+\vspace{1cm}
+
+\begin{flushleft}
+\fontsize{10pt}{12pt}\selectfont % Fonte tamanho 10 com linha simples
+\setlength{\parindent}{0pt} % Sem indentação normal
+\setlength{\leftskip}{8cm} % Recuo de 8cm
+
+
+Trabalho de Dissertação apresentado ao Programa de Pós-Graduação em Ciência da Computação do Instituto de Matemática e Estatística da Universidade de São Paulo, como requisito parcial para a obtenção do título de Mestre em Ciências da Computação.
+
+\end{flushleft}
+
+\noindent
+Data da aprovação: / / \\
+Conceito: 
+
+
+\begin{center}
+    \textbf{BANCA EXAMINADORA}
+\end{center}
+
+\vspace{0.8cm}
+
+\noindent\rule{14cm}{0.4pt} \\
+\textbf{Prof. Dr. Marcelo Finger} \\
+Instituto de Matemática e Estatística - USP (Presidente e Orientador)
+
+\vspace{1cm}
+
+\noindent\rule{14cm}{0.4pt} \\
+\textbf{Prof. Dr. Arnaldo Candido Junior} \\
+Universidade Estadual Paulista - UNESP
+
+\vspace{1cm}
+
+\noindent\rule{14cm}{0.4pt} \\
+\textbf{Prof. Dr. Thomas Daniel Finbow} \\
+Faculdade de Filosofia, Letras e Ciências Humanas - USP
+
+\newpage
+\begin{Resumo}
+
+\begin{center}
+    \textbf{RESUMO}
+\end{center}
+Esta dissertação propõe o desenvolvimento de ferramentas computacionais para a tradução automática e preservação cultural do Tupi Antigo, língua indígena histórica do Brasil colonial. O trabalho emprega técnicas modernas de Processamento de Linguagem Natural (PLN), com ênfase no modelo T5 (Text-to-Text Transfer Transformer), que é ajustado via fine-tuning para superar a escassez de dados e as complexidades morfológicas desta língua. Inicialmente, foi realizada a digitalização e normalização de materiais históricos – gramáticas, catecismos, dicionários e textos paralelos – provenientes dos séculos XVI a XVII. Após um rigoroso pré-processamento, que incluiu tokenização e validação manual, um corpus bilíngue português–Tupi Antigo foi estruturado para o treinamento do modelo. Para contornar a limitada disponibilidade de dados paralelos, a pesquisa explora o uso de línguas proximais, como o Guarani Paraguaio e o Nheengatu, atuando como pivôs no processo de transfer learning e contribuindo para uma tradução mais robusta e precisa.Além do sistema de tradução, foram desenvolvidas aplicações práticas, como um tradutor de palavras que simula um dicionário digital e o “Tupi Play”, uma plataforma web gamificada que promove o ensino e a revitalização do Tupi por meio de experiências lúdicas e inclusivas. A integração do modelo com a API da OpenAI amplia o acesso à ferramenta, permitindo sua utilização em diversos contextos sem a necessidade de infraestrutura própria. Os resultados preliminares evidenciam avanços significativos, com métricas de avaliação (BLEU, chrF, METEOR) demonstrando a eficácia do modelo em capturar padrões lexicais e sintáticos, mesmo em cenários de baixo recurso. A abordagem utilizando línguas intermediárias mostrou reduzir ambiguidades e melhorar a qualidade das traduções, reforçando a hipótese de que essa estratégia é eficaz para línguas historicamente marginalizadas. Por fim, o estudo aborda as implicações éticas e culturais do uso de tecnologias de inteligência artificial em contextos indígenas, enfatizando a importância de respeitar a autonomia das comunidades e de colaborar na preservação dos seus saberes e identidades. Assim, a dissertação contribui para a preservação linguística, demonstrando que a integração de tecnologias de PLN com práticas culturais pode ser um instrumento valioso para a revitalização de línguas ameaçadas.
+
+\textbf{Palavras-chave:} PLN, Tupi-Antigo, Tradutor, Transferência de Aprendizagem.
+
+\end{Resumo}
+\clearpage
+
+\begin{abstract}
+This dissertation presents the development of modern computational tools for automatic translation and cultural preservation of Old Tupi, a historically significant indigenous language of colonial Brazil. The research leverages advanced Natural Language Processing (NLP) techniques by fine-tuning the T5 (Text-to-Text Transfer Transformer) model, which is adapted to overcome the scarcity of annotated data and handle the complex morphological features inherent to Old Tupi. Initially, historical materials such as grammars, catechisms, dictionaries, and bilingual textsdating from the 16th to the 18th centuries were digitized, cleaned, and normalized to build a robust bilingual corpus of Portuguese and Old Tupi. Given the limited availability of direct parallel data, the study further explores the use of closely related languages such as Paraguayan Guarani and Nheengatu as intermediary pivots in a transfer learning framework. This strategy improves translation robustness and helps mitigate semantic and syntactic ambiguities. In addition to the translation system, practical applications were developed, including a digital dictionary-like word translator and "Tupi Play," a gamified web platform designed to promote and revitalize Old Tupi through engaging, accessible educational experiences. Integration with the OpenAI API further enhances the system's accessibility by enabling multilingual interactions without requiring local infrastructure. Preliminary results indicate significant progress, with evaluation metrics (BLEU, chrF, METEOR) demonstrating the model's ability to capture lexical and syntactic patterns despite the low-resource scenario. The intermediary language approach notably contributed to improved translation quality. Moreover, the dissertation discusses the ethical and cultural implications of deploying AI technologies in indigenous contexts, emphasizing the importance of respecting community autonomy and safeguarding traditional knowledge. Overall, this work contributes to the field of digital humanities by demonstrating how NLP technologies, when combined with culturally sensitive methodologies, can serve as powerful tools for the revitalization and preservation of endangered languages.
+\textbf{Keywords:} PLN, Old Tupi, Translator, Transfer Learning.
+
+\end{abstract}
+\clearpage
+\listoftables % Adiciona a lista de tabelas
+\newpage
+
+\listoffigures
+\newpage
+\begingroup
+    \renewcommand{\addcontentsline}[3]{}
+    \tableofcontents
+\endgroup
+
+\clearpage
+\setlength{\parindent}{1.25cm} % Reativa o recuo dos parágrafos
+
+\chapter{Introdução}
+O território que hoje corresponde ao Brasil foi, por séculos, habitado por uma vasta diversidade de povos indígenas, cada qual com suas línguas, culturas e formas próprias de organização social. Entre essas línguas, uma em particular destacou-se como língua franca, utilizada em extensas áreas do litoral atlântico por diferentes etnias. Essa língua pertencia ao tronco Tupi-Guarani e desempenhava um papel central na comunicação, nas trocas comerciais e nas práticas religiosas dos povos originários. Foi através do contato colonial, especialmente com a atuação dos missionários jesuítas, que essa língua foi sistematizada em gramáticas e catecismos, passando a ser conhecida, já no contexto europeu, por diversos nomes entre eles, Língua Geral, Língua Brasílica e, posteriormente, aquilo que a historiografia e a linguística convencionaram chamar de “Tupi Antigo”.
+
+É importante destacar, no entanto, que essa denominação “Tupi Antigo” é um nome atribuído retrospectivamente, resultado da visão colonial e acadêmica posterior. Os próprios falantes indígenas não se referiam à sua língua de maneira unificada com tal nomenclatura, e suas variantes regionais eram percebidas como expressões linguísticas ligadas à diversidade cultural e territorial desses povos. Ao longo deste trabalho, adoto o termo com a devida ressalva, consciente de que ele não corresponde a uma autodenominação indígena, mas a uma classificação posterior construída para fins analíticos e históricos.
+
+O processo colonial instaurado no Brasil promoveu, gradativamente, a substituição dessa e de outras línguas indígenas pelo português, especialmente após as reformas políticas do século XVIII, como a proibição formal do uso das chamadas Línguas Gerais em 1758 pelo Marquês de Pombal. Esse processo resultou não apenas na imposição de uma língua europeia sobre as línguas nativas, mas também no apagamento de conhecimentos ecológicos, cosmológicos e culturais que eram transmitidos oralmente por essas línguas.
+
+Nas últimas décadas, cresceu o interesse acadêmico e social pela revitalização e preservação das línguas indígenas. A digitalização de materiais históricos, o desenvolvimento de dicionários e gramáticas, e a inclusão dessas línguas em currículos escolares são algumas das iniciativas que buscam reverter o processo de extinção linguística. Entretanto, muitas dessas línguas ainda carecem de recursos computacionais que permitam sua inserção no ambiente digital, dificultando sua documentação sistemática e seu uso em plataformas contemporâneas.
+
+Neste contexto, a presente pesquisa propõe um caminho inovador para colaborar com a preservação e revitalização dessa língua do tronco Tupi-Guarani amplamente falada no período colonial. O objetivo principal deste trabalho é desenvolver um sistema de tradução automática entre o português e essa língua histórica, utilizando técnicas modernas de Processamento de Linguagem Natural (PLN), com ênfase no uso de redes neurais e arquiteturas do tipo Transformer. Este trabalho explora especificamente o modelo T5 (Text-to-Text Transfer Transformer), conhecido por sua flexibilidade e capacidade de ser ajustado para tarefas específicas, como tradução automática em cenários de recursos escassos.
+
+A proposta metodológica baseia-se em três pilares fundamentais. Primeiro, foi realizada a coleta e digitalização de materiais linguísticos relevantes, provenientes de fontes históricas, incluindo gramáticas, catecismos e dicionários elaborados durante o período colonial. Esses dados foram cuidadosamente organizados e submetidos a um processo de limpeza e normalização para adequação ao treinamento de modelos de aprendizado profundo. Segundo, foi implementado um tradutor direto entre português e a língua histórica, utilizando um modelo T5 ajustado a partir desses dados. Por fim, como forma de contornar a limitação do volume de dados disponíveis, esta pesquisa explora a utilização de línguas proximais, como o Guarani Paraguaio e o Nheengatu, no treinamento do modelo, aplicando técnicas de transfer learning para melhorar a performance do sistema.
+
+O uso de técnicas avançadas de PLN, especialmente em línguas de recursos limitados e historicamente marginalizadas, tem sido cada vez mais reconhecido como uma ferramenta poderosa para a revitalização linguística. Alinhada às diretrizes da Década Internacional das Línguas Indígenas (2022–2032), esta pesquisa não apenas visa fornecer uma ferramenta computacional útil para tradutores e pesquisadores, mas também contribuir para a valorização e preservação do patrimônio linguístico dos povos indígenas brasileiros.
+
+Além dos aspectos técnicos, este trabalho também busca dialogar com questões culturais e éticas relacionadas ao uso de tecnologia em contextos indígenas, reconhecendo a importância de respeitar a autonomia das comunidades originárias e a necessidade de desenvolver soluções que sejam acessíveis, transparentes e colaborativas.
+
+Nos capítulos seguintes, detalho os fundamentos teóricos que sustentam esta pesquisa, apresento o estado da arte na área de tradução automática e PLN, e descrevo minuciosamente as etapas de preparação de dados, treinamento dos modelos e avaliação dos resultados. Acredito que a integração entre tecnologia e preservação linguística oferece caminhos promissores para reforçar o protagonismo indígena e garantir que essas línguas continuem vivas, tanto em suas comunidades quanto no espaço digital contemporâneo.
+
+\chapter{ O Tupi Antigo}
+Antes da chegada dos portugueses, várias etnias indígenas falavam línguas da família tupi-guarani, sendo o Tupi Antigo uma espécie de língua franca entre muitos desses povos. Os jesuítas, especialmente no litoral brasileiro e na região do atual Sudeste, adotaram o Tupi Antigo como meio de evangelização e ensino \hyperlink{Rodrigues1986}{RODRIGUES, 1986}.
+. Essa prática resultou na consolidação da chamada Língua Geral Paulista ou Língua Brasílica, uma versão baseada no Tupi Antigo \hyperlink{Navarro2012}{(NAVARRO, 2012)}.
+ No entanto, em 1758, no contexto das reformas pombalinas, o Marquês de Pombal instituiu o português como língua oficial nas capitanias do Maranhão e Grão-Pará, proibindo o uso do Tupi e de outras línguas indígenas \hyperlink{SilvaNeto1950}{(SILVA NETO, 1950)}. Essa medida visava enfraquecer o poder dos Jesuítas sobre a colônia e consolidar a autoridade da Coroa Portuguesa. Ao impor o português como única língua permitida, Pombal buscava integrar os indígenas à sociedade colonial portuguesa e reduzir a influência dos jesuítas, que utilizavam o Tupi na catequese e educação dos nativos \hyperlink{Azevedo2004}{(AZEVEDO, 2004)}.
+
+A expulsão da Companhia de Jesus no Maranhão e Grão-Pará ocorreu precocemente, em 1759, como parte das reformas pombalinas \hyperlink{Araujo2007}{(ARAÚJO, 2007)}. Após a expulsão, foi instituído o Diretório dos Índios, que permaneceu vigente até 1798 \hyperlink{Oliveira2013}{(OLIVEIRA, 2013)} De acordo com os relatos do missionário João Daniel (1759-1778), o Tupi Antigo já não era falado nativamente na região do Maranhão e Grão-Pará nesse período \hyperlink{Daniel2004}{(DANIEL, 2004)}. O processo de substituição linguística foi gradual, e não imediato após a expulsão dos jesuítas. Além disso, algumas etnias que não foram fortemente impactadas pelas políticas do Diretório dos Índios preservaram suas línguas nativas, como os Mawé e os Munduruku \hyperlink{Rodrigues1986}{(RODRIGUES, 1986)}.
+
+Essa legislação fez parte do processo que culminou com a expulsão dos Jesuítas do Brasil levando ao declínio do Tupi Antigo e de outras línguas indígenas, muitas das quais desapareceram ou ficaram restritas a comunidades isoladas. A imposição do português a priori não foi totalmente acatada, pois no intervalo entre a primeira proibição, continuou-se a utilização do tupi antigo, essa alteração de língua se deu de forma gradual, pelos motivos que serão discorridos mais à frente \hyperlink{Navarro2012}{(NAVARRO, 2012)}.
+
+Após a expulsão dos jesuítas, as aldeias missionárias foram reestruturadas pelo Diretório dos Índios, que passou a controlar essas comunidades sob administração de diretores seculares. Embora o Diretório tenha formalmente aberto as missões à supervisão civil, práticas econômicas exploratórias, como a extração das chamadas “drogas do sertão”, permaneceram. Esse termo designava produtos nativos da região amazônica, como cacau, urucum, castanha, salsaparrilha, guaraná e cacau silvestre, amplamente explorados para exportação \hyperlink{Hemming2007}{(HEMMING, 2007)}. A imposição do português e das normas civis, substituindo a administração jesuítica, também contribuiu para a gradual substituição do Tupi Antigo nessas comunidades \hyperlink{Oliveira2013}{(OLIVEIRA, 2013)}.
+
+
+ Relatos históricos mencionam episódios de violência, com indígenas sendo castigados por utilizarem sua língua nativa em público. Além disso, muitos textos em Tupi, incluindo catecismos e gramáticas, foram destruídos ou confiscados para evitar sua disseminação.
+ Após a expulsão dos jesuítas em 1759, houve uma tentativa de centralizar a educação sob a égide do Estado, o que impactou o uso das línguas indígenas \hyperlink{Sousa2015}{(SOUSA, 2015)}. Além disso, o Tupi Antigo já havia começado a perder sua predominância como língua vernacular antes mesmo desse período, especialmente após a proibição da língua geral pelo Marquês de Pombal em 1758.
+
+
+Essa política linguística teve consequências significativas, levando ao declínio do Tupi Antigo e de outras línguas indígenas, muitas das quais desapareceram ou ficaram restritas a comunidades isoladas. A imposição do português contribuiu para a homogeneização linguística do Brasil, mas também resultou na perda de grande parte da diversidade linguística e cultural indígena do país \hyperlink{Navarro2012}{(NAVARRO, 2012)}.
+
+\subsection{ A Importância do Tupi Antigo}
+O Tupi Antigo (ou Língua Brasílica) foi uma das principais línguas indígenas faladas no território brasileiro durante o início da colonização portuguesa. Antes da chegada dos europeus, era a língua comum entre várias populações indígenas ao longo da costa atlântica, sendo usada em diferentes contextos sociais e religiosos. Não sabemos exatamente como as diferentes nações indígenas do litoral concebiam a relação entre as variantes linguísticas que falavam. Para os europeus, porém, tratava-se de uma única língua, com variações regionais \hyperlink{Rodrigues1986}{(RODRIGUES, 1986)}. Os jesuítas, como parte de sua missão de evangelização, adotaram e disseminaram o Tupi Antigo, sistematizando-o por meio de gramáticas e catecismos. Essa língua se tornou fundamental no processo de evangelização dos povos nativos durante os séculos XVI e XVII \hyperlink{Navarro2012}{(NAVARRO, 2012)}.
+\subsection{Ascensão e Queda do Tupi Antigo}
+A língua hoje conhecida como Tupi Antigo recebeu diferentes denominações ao longo do tempo. Durante o período colonial, ela era frequentemente chamada de Língua Brasílica ou simplesmente Língua Geral, especialmente no contexto missionário, quando foi utilizada como língua de contato entre colonizadores e povos indígenas. Os próprios falantes indígenas não tinham um nome específico para ela enquanto língua unificada, já que representava uma variedade de dialetos das etnias costeiras. O termo Tupi Antigo foi cunhado posteriormente por linguistas e historiadores para diferenciar essa língua original das línguas derivadas que surgiram após a colonização, como a Língua Geral Paulista e a Língua Geral Amazônica (Nheengatu), que sofreram influências do português e de outras línguas indígenas. Essa denominação destaca o caráter histórico e ancestral da língua, diferenciando-a das formas modificadas que permaneceram em uso até o século XIX \hyperlink{Rodrigues1986}{(RODRIGUES, 1986); \hyperlink{Navarro2013}{NAVARRO, 2013}}.
+Entre os séculos XVI e XVII, o Tupi Antigo foi amplamente utilizado, inclusive entre os colonizadores portugueses, e ganhou status de língua franca no Brasil
+colonial. Os jesuítas, em especial, desempenharam um papel crucial na formalização da língua, criando dicionários e obras gramaticais que serviram
+de base para o ensino do Tupi Antigo. Um exemplo marcante desse esforço foi a gramática escrita pelo Padre Luís Figueira, publicada em 1621, que atualizou e sistematizou o ensino do Tupi Antigo, tornando-se uma referência significativa para missionários e educadores no período colonial \hyperlink{Zwartjes2021}{(ZWARTJES, 2021)}. No entanto, a partir de meados do século XVIII, a situação do Tupi Antigo
+começou a mudar drasticamente. Em 1758, o Marquês de Pombal, como parte de
+suas reformas políticas e administrativas, proibiu o uso de línguas indígenas no
+Brasil. A proibição da Língua Geral pelo Marquês de Pombal, em 1758, tinha como objetivo principal enfraquecer o poder dos jesuítas, mais do que simplesmente impor o português como língua única \hyperlink{Oliveira2013}{(OLIVEIRA, 2013)}. No entanto, sua eficácia prática foi limitada, especialmente no Estado do Maranhão e Grão-Pará, onde a língua geral continuou a ser falada por décadas. Já no Estado do Brasil, o uso do Tupi Antigo e de suas variantes vinha declinando naturalmente em meados do século XVIII, como resultado do crescimento populacional luso-brasileiro e das transformações sociais promovidas pela colonização \hyperlink{Hemming2007}{(HEMMING, 2007)}. 
+A língua gradualmente desapareceu, sendo substituída pelo português nas regiões coloniais, especialmente nas áreas de maior contato com os colonizadores. A perda da língua representou também a perda de uma vasta gama
+de conhecimentos culturais e ecológicos, que estavam enraizados na cosmovisão
+indígena expressa pela língua \hyperlink{Arauo2024 }{(ARAUJO, 2024)}.
+
+O impacto do Tupi Antigo também se estendeu à maneira como os brasileiros
+concebem sua própria identidade cultural. Ao longo dos séculos, a fusão entre o
+português e o Tupi Antigo ajudou a moldar não apenas o idioma, mas também
+a cultura e a maneira como a relação com a terra e com os recursos naturais era
+vista pelos povos indígenas e colonos.
+Na era moderna, surgiram diversas iniciativas para revitalizar o
+Tupi Antigo, apesar de seu status de língua extinta. A digitalização e análise de
+textos escritos em Tupi por jesuítas e colonos são hoje uma das principais fontes
+10
+de pesquisa linguística. A criação de dicionários, gramáticas e outros materiais de
+referência sobre o Tupi Antigo são cruciais para garantir que essa língua continue
+sendo estudada e valorizada \hyperlink{Moore2020}{(MOORE, 2020)}.
+\subsection{História e Usos Coloniais}
+Embora tenha sido progressivamente substituído pelo português, o tupi antigo deixou um legado linguístico profundo. Palavras de origem tupi permeiam amplamente o português brasileiro, sobretudo no léxico relacionado à flora, fauna, alimentos e topônimos. Termos como “pipoca” (de pi’poka, estourar), “jacaré” (de îakaré), “anhanguera” (de añang, demônio + uera, antigo) e inúmeros nomes geográficos  como Itaquaquecetuba ou Pindamonhangaba  evidenciam esse legado linguístico \hyperlink{Navarro2013}{(NAVARRO, 2013)}. Além disso, estudos indicam inúmeras palavras do português brasileiro derivam diretamente de línguas indígenas, com predominância do Tupi Antigo \hyperlink{Cunha1992}{(CUNHA, 1992)}.
+
+Durante o período colonial, o tupi antigo era amplamente utilizado em atividades econômicas, especialmente no comércio de produtos nativos. Nos dias atuais, o tupi antigo é objeto de estudos acadêmicos e projetos culturais que visam resgatar sua relevância histórica. Segundo \hyperlink{Lara2019}{(LARA, 2019)}, iniciativas de revitalização da língua destacam seu valor como símbolo de identidade nacional e como ferramenta para o turismo cultural e a produção artística.
+
+\subsection{Relações entre o Guarani, o Tupi e o Comércio}
+O Tupi Antigo corresponde à língua falada originalmente pelos povos indígenas ao longo da costa atlântica brasileira durante os séculos XVI e XVII. Foi a base utilizada pelos jesuítas para catequese e elaboração de gramáticas e catecismos. Com o passar do tempo, a expansão colonial e o contato entre diferentes povos resultaram no surgimento das chamadas Línguas Gerais, variantes derivadas do Tupi Antigo, mas adaptadas regionalmente. Segundo Rodrigues, as principais Línguas Gerais são a Língua Geral Paulista (ou Meridional), falada no sul e sudeste do Brasil, e a Língua Geral Amazônica (Nheengatu), difundida no norte, especialmente no Maranhão e Grão-Pará. Diferentemente do Tupi Antigo, as Línguas Gerais sofreram simplificações gramaticais e receberam influências de outras línguas indígenas e do português colonial, servindo como línguas francas em diferentes contextos regionais \hyperlink{Rodrigues1986}{(RODRIGUES, 1986, 1996)}.
+Tanto o Guarani Paraguaio quanto o Tupi Antigo desempenharam papéis fundamentais como línguas francas na América do Sul. O Tupi Antigo foi utilizado intensamente durante os séculos XVI e XVII na costa brasileira, facilitando as relações comerciais e sociais entre diversos povos indígenas e colonizadores portugueses \hyperlink{Rodrigues1986}{(RODRIGUES, 1986)}. Já o Guarani, especialmente no Paraguai, manteve-se como língua amplamente falada, assumindo relevância não apenas cultural, mas também econômica. Em regiões de fronteira, como na tríplice fronteira entre Brasil, Paraguai e Argentina, o Guarani continua sendo uma ferramenta prática para o comércio e para as interações cotidianas \hyperlink{Valentim2019}{(VALENTIM, 2019)}. Embora o Tupi Antigo tenha deixado de ser falado, ele ressoa na memória histórica e cultural do Brasil, marcado na toponímia e no vocabulário do português brasileiro \hyperlink{Navarro2013}{(NAVARRO, 2013)}.
+
+Essas línguas exemplificam como idiomas indígenas não apenas moldaram dinâmicas econômicas e culturais no passado, mas continuam a influenciar identidades regionais e relações sociais no presente \hyperlink{Hemming2007}{(HEMMING, 2007)}.
+O uso do Guarani transcende o âmbito doméstico, desempenhando um papel importante na economia local e regional. Segundo \hyperlink{Galeano1973} {(GALEANO, 1973)}, o guarani facilita interações comerciais em mercados rurais, onde pequenos agricultores e comerciantes utilizam a língua para negociar produtos como erva-mate e artesanato.
+
+Além disso, o guarani é amplamente falado em zonas de fronteira, como Ciudad del Este e Foz do Iguaçu, onde é utilizado como ferramenta para o comércio transfronteiriço informal \hyperlink{Melia1988} {(MELIA, 1986)}. A vitalidade da língua também é observada na produção cultural, com músicas e obras literárias guaranis que atraem o turismo e reforçam sua importância econômica e simbólica.
+O uso do Guarani Paraguaio transcende o âmbito doméstico, desempenhando um papel importante na economia local e regional. Segundo \hyperlink{Galeano1973}{GALEANO (1973)}, o guarani facilita interações comerciais em mercados rurais, onde pequenos agricultores e comerciantes utilizam a língua para negociar produtos como erva-mate e artesanato. Além disso, o guarani é amplamente falado em zonas de fronteira, como Ciudad del Este e Foz do Iguaçu, sendo utilizado como ferramenta para o comércio transfronteiriço informal \hyperlink{Melia1986}{(MELIÀ, 1986)}. A vitalidade da língua também é observada na produção cultural, com músicas e obras literárias guaranis que atraem turismo e reforçam sua importância econômica e simbólica \hyperlink{Choi2005}{(CHOI, 2005)}. No entanto, como ressalta Choi, essa expansão do Guarani Paraguaio tem impactos linguísticos importantes, pois ele acaba exercendo pressão sobre outras línguas indígenas faladas no Paraguai, muitas das quais enfrentam risco de extinção devido ao domínio crescente do guarani no espaço público.
+
+\subsection{A Gênese Prototupi}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{7731aaa7d8f96f9c89fb7ab007e110e1a3e736ec.jpg}
+    \caption{Prototupi e seus desdobramentos:}
+    \label{fig1:Nota sobre o sistema de parentesco em Proto-Tupí-Guaraní}
+\end{figure}
+Segundo \hyperlink{Birchall2021}{(BIRCHALL, 2021)} A língua Proto-Tupí-Guaraní (PTG), utilizando contribuições da etnologia, da linguística histórica e da etnografia dos povos Tupí-Guaraní utilizando-se de métodos filogenéticos comparativos para inferir aspectos da pré-história cultural desse grupo linguístico, pode se concluir que: 
+O Padre José de Anchieta (1595) e o Padre Antônio de Araújo (1618) registraram os primeiros termos de parentesco no Tupí Antigo. Esses registros mostram que o Tupi Antigo se sobressaí para do PTG, quando:
+\begin{itemize}
+    \item Há distinção de termos para irmãos baseada na idade relativa e no sexo,
+    \item Há diferença no tratamento de tios maternos e paternos.
+\end{itemize}
+
+\subsection{Terminologia de parentesco no Tupi Antigo:}
+
+O termo tuba (<tûba>) era usado para "pai natural, tio ou primo do pai".
+O termo sy (<cî>) significava "mãe", e syyra (<cîîra>) era uma derivação para "tia materna".
+Essa estrutura mostra que o Tupi Antigo já possuía um sistema de fusão bifurcada para a primeira geração ascendente, ou seja, tios e tias poderiam compartilhar terminologia com pais e mães a depender de sua ascendência.\hyperlink{Birchall2021}{(BIRCHALL, 2021)}
+
+Por fim, resumindo: O estudo identifica um "sistema Tupi's", comparáveis aos sistemas de parentesco Iroquois e Dakota, da América do Norte.
+
+
+\section{Línguas Proximais na Reconstrução do Tupi Antigo}
+O Guarani Paraguaio, amplamente falado no Paraguai, e o Tupi Antigo, um idioma histórico do Brasil colonial, possuem trajetórias marcadas por resistências, transformações e influências econômicas. Este capítulo explora as conexões históricas, culturais e econômicas dessas línguas, destacando sua relevância contemporânea e histórica \hyperlink{Meliá1999}{(MELIA, 1999)}.
+A existência de línguas proximais, como o Guarani Paraguaio pode auxiliar na criação de recursos de tradução para o Tupi Antigo. O Guarani Paraguaio, falado em países vizinhos como Paraguai e Argentina, compartilha com o Tupi Antigo muitas estruturas gramaticais e lexicais devido à sua origem comum no tronco Tupi-Guarani. No Brasil, há também comunidades falantes de diferentes variedades do Guarani, como o Nhandewa, Kaiowá, Mbyá e Xetá, especialmente em regiões do sul e centro-oeste \hyperlink{Rodrigues1986}{(RODRIGUES, 1986)}. O Nheengatu, também derivado do Tupi, foi amplamente utilizado na região amazônica até o século XIX e permanece em uso em algumas áreas. A comparação de léxicos e de estruturas sintáticas entre essas línguas proximais e o Tupi Antigo pode fornecer um modelo para a criação de regras de tradução e algoritmos de correspondência linguística \hyperlink{Souza2014}{(SOUZA, 2014)}. Um dos métodos fundamentais para esse processo é a detecção de cognatos, ou seja, palavras que compartilham uma origem comum em diferentes línguas. A identificação de cognatos pode ser realizada por meio de critérios fonológicos e morfológicos, como correspondências sistemáticas de sons e padrões de formação de palavras. Algoritmos de detecção de cognação frequentemente utilizam técnicas de comparação baseada em similaridade fonética (como distância de Levenshtein ou Soundex adaptado) combinadas com regras linguísticas que levam em conta mudanças regulares ocorridas historicamente. Além disso, quando há documentação histórica ou dados comparativos, é possível empregar métodos filogenéticos computacionais para reforçar a identificação das relações cognatas \hyperlink{Campbell2004}{(CAMPBELL, 2004)}.
+
+\chapter{História e Contexto Sociocultural do Guarani Paraguaio}
+
+O Guarani é uma das poucas línguas indígenas da América Latina com status oficial. Segundo \hyperlink{Susnik1975}{(SUSNIK, 1975)}, a presença do Guarani como língua predominante no Paraguai remonta ao período pré-colonial, quando os povos guaranis ocupavam vastas áreas da América do Sul, incluindo territórios que hoje compõem Brasil, Paraguai, Argentina e Bolívia.
+O desenvolvimento do Guarani como uma língua distinta do tupi antigo começou muito antes da chegada dos colonizadores europeus à América do Sul. Ambos pertencem ao ramo linguístico tupi-guarani, mas já haviam seguido caminhos evolutivos separados devido à dispersão geográfica e à adaptação cultural das comunidades indígenas. Enquanto o Tupi Antigo era amplamente utilizado pelas populações indígenas ao longo da costa brasileira, o Guarani se consolidava no interior do continente, especialmente na região que hoje corresponde ao Paraguai e Argentina. Essas diferenças foram moldadas por contextos ambientais e socioculturais únicos, que influenciaram a formação de léxicos, estruturas gramaticais e usos pragmáticos específicos \hyperlink{Melia1988} {(MELIA, 1986)}. Assim, o Guarani Paraguaio adquiriu características próprias, como o bilinguismo estruturado com o espanhol e a regularização gramatical, refletindo as práticas e valores das comunidades que o falam.\hyperlink{Melia1988} {(MELIA, 1986)}. 
+Durante o período colonial, os jesuítas utilizaram o guarani como língua de catequese nas reduções, preservando-o em um contexto de crescente revisão às Reduções Jesuítas \footnote{{Reduções Jesuíticas} 
+-As reduções jesuíticas foram assentamentos organizados pelos missionários da Companhia de Jesus na América do Sul durante os séculos XVI e XVII, com o objetivo de evangelizar e proteger as populações indígenas. Esses povoados foram estabelecidos principalmente nas áreas correspondentes ao atual Paraguai, sul do Brasil e nordeste da Argentina, com destaque para as Missões Guaranis.}
+
+Segundo \hyperlink{Lara2019}{(LARA, 2019)}, as reduções eram comunidades planejadas para integrar os indígenas à religião cristã e à cultura europeia, mantendo parcialmente elementos das práticas locais. Esses povoados funcionavam como espaços de proteção contra os bandeirantes e outros colonizadores que escravizavam populações indígenas, mas também serviam como ferramentas de controle cultural, impondo valores e normas europeias. No entanto, é importante destacar que na primeira metade do século XVII, essas missões jesuíticas foram frequentemente saqueadas por paulistas, que buscavam capturar indígenas, como os carijós, para serem escravizados \hyperlink{Monteiro1994}{(MONTEIRO, 1994)}.    
+
+
+Segundo  \hyperlink{Clastres1995}{(CLASTRES, 1995)}, a difusão do Guarani foi intensificada por sua utilidade prática como língua franca entre diferentes grupos indígenas e colonizadores. Hoje, aproximadamente 80\% da população paraguaia utiliza o Guarani, tornando-o um caso exemplar de resiliência linguística em um mundo predominantemente globalizado \hyperlink{Melia1991}{(MELIA, 1986)} .
+
+
+
+\section{O Nheengatu}
+O Nheengatu, também denominado Língua Geral Amazônica, é uma língua pertencente à família Tupi-Guarani e descendente do Tupi Antigo, originalmente falado pelos Tupinambás. Estudos apontam que a formação da Língua Geral Amazônica foi influenciada por grupos de Tupinambás provenientes do Maranhão, muitos deles deslocados da região de Pernambuco desde meados do século XVI \hyperlink{Rodrigues1986}{(RODRIGUES, 1986)}. Embora o termo Nheengatu só passe a ser atestado a partir do século XIX, variantes da língua já eram amplamente faladas na Amazônia desde o século XVII, sendo frequentemente referidas como Nheengaíba em documentos coloniais \hyperlink{Navarro2013}{(NAVARRO, 2013)}. Essas variantes atuaram como línguas francas entre diferentes povos indígenas e colonizadores, Antes da chegada dos colonizadores, os povos indígenas da costa atlântica e do interior amazônico já mantinham redes de comunicação eficientes entre si, compartilhando variantes da família Tupi-Guarani sem grandes dificuldades \hyperlink{Rodrigues1986}{(RODRIGUES, 1986)}. Antes mesmo da chegada dos colonizadores europeus, diversos povos indígenas já mantinham redes de comunicação entre si, compartilhando variantes da família Tupi-Guarani sem grandes dificuldades \hyperlink{Rodrigues1986}{(RODRIGUES, 1986)}. Com a expansão da colonização portuguesa, o Tupi Antigo, e posteriormente suas variantes conhecidas como Língua Geral Amazônica (Nheengatu), consolidaram-se como línguas de prestígio, utilizadas não apenas entre os próprios indígenas, mas também como instrumento de evangelização, administração e comércio, acompanhando o avanço territorial colonial \hyperlink{Navarro2013}{(NAVARRO, 2013)}.
+
+Ao longo dos séculos, o Nheengatu consolidou-se como língua geral na região do Rio Negro, caracterizando-se pela simplificação de aspectos fonológicos e gramaticais do Tupi Antigo, bem como pela incorporação de elementos lexicais do português e de outras línguas indígenas amazônicas \hyperlink{Cruz2009}{(CRUZ, 2009)}. Durante o período colonial, a Língua Geral Amazônica foi utilizada principalmente por missionários e autoridades coloniais no Grão-Pará e Maranhão, permanecendo relevante até o século XIX, quando começou a perder espaço devido à imposição do português como língua oficial do Brasil \hyperlink{Franchetto2001}{(FRANCHETTO et al., 2001)}.
+
+Apesar desse declínio, o Nheengatu ainda é falado por milhares de pessoas, sobretudo nas margens do Rio Negro, abrangendo territórios do Brasil, Colômbia e Venezuela \hyperlink{Navarro2011}{(NAVARRO, 2011)}. Nas últimas décadas, políticas de revitalização linguística foram implementadas, incluindo seu reconhecimento como língua cooficial em municípios como São Gabriel da Cachoeira, no Amazonas \hyperlink{Cruz2009}{(CRUZ, 2009)}. No entanto, persistem desafios relacionados à transmissão intergeracional e à predominância do português nos sistemas educacional e administrativo \hyperlink{Franchetto2001}{(FRANCHETTO et al., 2001)}.
+
+Nos últimos anos, iniciativas tecnológicas têm buscado contribuir para a preservação e disseminação do Nheengatu por meio de ferramentas digitais. Uma das principais é o GrammYEP, desenvolvido por pesquisadores da Universidade Federal do Ceará, que se destaca como o primeiro tradutor automático dedicado ao Nheengatu. Lançado em 2020, o \textbf{GrammYEP} possibilita traduções entre Nheengatu, português e inglês, sendo voltado tanto para o ensino quanto para a valorização da língua \hyperlink{UFCE2020}{(UFC, 2020)}. Além disso, plataformas como o \textbf{Glosbe} disponibilizam um dicionário online bilíngue, permitindo o acesso a traduções e exemplos práticos de uso da língua. Outro recurso disponível é o Nheengatu Translator, que oferece traduções básicas para diferentes idiomas, contribuindo para popularizar o idioma em ambientes digitais. 
+Além de sua função como língua franca na Amazônia, o Nheengatu desempenhou um papel fundamental na construção de identidades culturais regionais. Para diversas comunidades do Alto Rio Negro, ele não apenas facilitava a comunicação interétnica, mas também consolidava práticas culturais e sociais compartilhadas. A língua carrega elementos históricos de resistência e adaptação frente às pressões coloniais e, posteriormente, nacionais \hyperlink{Franchetto2001}{(FRANCHETTO et al., 2001)}.
+
+No campo linguístico, estudos indicam que o processo de simplificação do Nheengatu, em relação ao Tupi Antigo, envolveu mudanças significativas no sistema pronominal, na redução dos sufixos derivacionais e na perda de distinções fonológicas mais complexas. Essa simplificação foi acompanhada pela incorporação de vocabulário de origem portuguesa e de línguas indígenas amazônicas, conferindo ao Nheengatu uma configuração própria, distinta de sua matriz original \hyperlink{Cruz2009}{(CRUZ, 2009)}.
+
+
+Mais recentemente, o avanço de políticas públicas para a revitalização linguística trouxe novas perspectivas para o Nheengatu. Além da cooficialização em São Gabriel da Cachoeira, há iniciativas de produção de material didático bilíngue e inclusão da língua em projetos de educação indígena. Apesar desses avanços, ainda persistem barreiras relacionadas à hegemonia do português, à ausência de recursos tecnológicos específicos para a língua e às dificuldades em garantir sua transmissão intergeracional \hyperlink{Navarro2011}{(NAVARRO, 2011)}.
+
+\section{Desafios Linguísticos e Computacionais}
+
+A digitalização e sistematização da língua registrada historicamente pelos jesuítas  comumente denominada pela historiografia de ``Tupi Antigo''  enfrentam uma série de desafios técnicos e linguísticos. Primeiramente, a maior parte dos registros disponíveis encontra-se dispersa em manuscritos arcaicos, produzidos entre os séculos XVI e XVII, sem padronização ortográfica ou gramatical. Esses documentos apresentam heterogeneidade significativa, uma vez que foram elaborados para diferentes finalidades, como catecismos, gramáticas, dicionários ou crônicas, e refletem a perspectiva e o nível de proficiência dos autores europeus que os compilaram \hyperlink{Rodrigues1986}{(RODRIGUES, 1986); \hyperlink{Navarro2012}{NAVARRO, 2012}}. Isso implica que os materiais variam consideravelmente quanto à terminologia, estrutura e fidelidade à língua originalmente falada.
+
+Outro fator agravante reside na ausência de falantes nativos para validação direta de traduções ou reconstrução de contextos. Isso impossibilita o uso de métodos comuns no Processamento de Linguagem Natural (PLN), como coleta de novos corpora orais ou iniciativas de \textit{crowdsourcing}, recursos amplamente aplicados em línguas em revitalização \hyperlink{Moore2020}{(MOORE, 2020)}. Dessa forma, resta apenas o trabalho sobre documentos históricos, exigindo interpretação crítica e filtragem cuidadosa.
+
+Do ponto de vista linguístico, um dos principais desafios é lidar com sua morfologia rica e aglutinante. Essa língua é caracterizada por uma complexa estrutura de afixos para indicar sujeitos, objetos, tempos verbais e outros elementos gramaticais \hyperlink{Navarro2013}{(NAVARRO, 2013)}. Os modelos neurais modernos, como aqueles baseados na arquitetura Transformer, foram majoritariamente treinados em línguas ocidentais com morfossintaxe distinta. Adaptá-los para reconhecer e processar línguas com morfologia complexa requer ajustes específicos na tokenização e na definição de vocabulário.
+
+Além disso, há escassez de dados anotados sintática ou semanticamente. O sucesso dos modelos supervisionados de tradução automática geralmente depende de grandes volumes de dados paralelos  pares de frases em duas línguas correspondentes  o que não está disponível neste caso. A anotação manual desses dados exige especialistas com domínio das fontes históricas e da estrutura linguística da língua, o que aumenta o custo e o tempo de produção de corpora adequados \hyperlink{Bertinetto2019}{(BERTINETTO, 2019)}.
+
+No processo de digitalização, os desafios técnicos também são expressivos. Os textos originais foram impressos em tipografias antigas, muitas vezes desgastadas, ou escritos manualmente. O uso de ferramentas de Reconhecimento Óptico de Caracteres (OCR) para converter esses documentos em texto digitalizado enfrenta dificuldades como erros de reconhecimento, perda de diacríticos e confusão de caracteres. O resultado é a necessidade de uma etapa intensiva de revisão manual após o OCR, para corrigir inconsistências e garantir qualidade no corpus digitalizado.
+
+Do ponto de vista computacional, há limitações quanto aos recursos necessários para treinar modelos robustos. Modelos como T5 ou BERT, em suas versões completas, demandam infraestrutura computacional considerável, incluindo GPUs potentes e elevado uso de memória RAM \hyperlink{Raffel2020}{(RAFFEL, 2020)}. 
+
+
+Diante de tais desafios, esta pesquisa adotou uma estratégia híbrida. Primeiramente, realizou-se a digitalização criteriosa dos materiais históricos disponíveis, seguida de um processo de normalização ortográfica. Para contornar a escassez de dados, também foi explorada a utilização de línguas proximais, como o Guarani Paraguaio e o Nheengatu, aplicando técnicas de \textit{transfer learning} para ajustar modelos já treinados a partir desses idiomas \hyperlink{Souza2014}{(SOUZA, 2014); \hyperlink{Valentim2019}{VALENTIM, 2019}}.
+
+Experiências de revitalização linguística em contextos semelhantes, como o Maori na Nova Zelândia e as línguas inuítes no Canadá, demonstram que a integração entre documentação histórica e tecnologias de PLN pode produzir resultados significativos \hyperlink{Moore2020}{(MOORE, 2020)}. Inspirado nesses exemplos, este trabalho busca oferecer uma solução viável e ética para preservar e valorizar uma das línguas fundamentais da história cultural brasileira.
+
+
+\subsection{Aplicação de Tecnologias de PLN para Línguas Indígenas}
+
+O avanço das tecnologias de Processamento de Linguagem Natural (PLN) nos últimos anos tem possibilitado significativos progressos na tradução automática e na análise textual para línguas amplamente documentadas. No entanto, aplicar essas tecnologias a línguas indígenas, especialmente aquelas sem falantes nativos ativos e com documentação fragmentada, impõe uma série de barreiras técnicas e metodológicas. Ferramentas como tradutores automáticos, classificadores de texto e sistemas de geração de linguagem natural são geralmente construídas a partir de métodos baseados em redes neurais profundas e aprendizado supervisionado. Esses métodos, entretanto, dependem de grandes volumes de dados paralelos e anotados  um requisito difícil de satisfazer no caso das línguas indígenas \hyperlink{Bertinetto2019}{(BERTINETTO, 2019)}.
+
+Para superar esse obstáculo, uma das estratégias mais promissoras é a utilização de técnicas de \textit{transfer learning}. Essa abordagem permite que modelos previamente treinados em grandes corpora de línguas com mais recursos, como português ou espanhol, sejam ajustados para tarefas específicas em línguas de baixo recurso. No caso desta pesquisa, modelos treinados em línguas próximas do tronco Tupi-Guarani, como o Guarani Paraguaio e o Nheengatu, podem atuar como ponto de partida. Como essas línguas compartilham características léxicas e gramaticais significativas com a língua documentada nos textos históricos jesuíticos, é possível aproveitar essas semelhanças para reduzir o volume necessário de dados específicos \hyperlink{Souza2014}{(SOUZA, 2014); \hyperlink{Valentim2019}{VALENTIM, 2019)}.
+
+Além do \textit{transfer learning}, técnicas de \textit{data argmentation} são empregadas para enriquecer o conjunto de dados, incluindo a geração de variantes sintáticas e lexicais a partir dos textos existentes. Isso não só amplia a base de treinamento, mas também ajuda o modelo a lidar melhor com as variações ortográficas encontradas nas fontes históricas. Outro recurso aplicado é a tokenização adaptada, projetada para capturar as unidades morfológicas complexas da língua, respeitando sua natureza aglutinante \hyperlink{Navarro2013}{(NAVARRO, 2013)}.
+
+Por fim, destaca-se o uso de abordagens multitarefa, em que o modelo é treinado simultaneamente para realizar tarefas como tradução, análise morfológica e geração de frases. Isso contribui para que ele aprenda representações linguísticas mais robustas e generalizáveis, mesmo em cenários de dados escassos \hyperlink{Raffel2020}{(RAFFEL, 2020)}.
+
+Essas estratégias não apenas viabilizam a criação de ferramentas computacionais para línguas indígenas, mas também podem ser aplicadas a outros contextos de revitalização linguística. Projetos de PLN desenvolvidos para línguas em risco, como o \textbf{Maori} ou línguas \textbf{Inuítes}, demonstram que, mesmo com limitações de dados, é possível construir sistemas eficientes quando há planejamento metodológico e sensibilidade às especificidades linguísticas \hyperlink{Moore2020}{(MOORE, 2020)}.
+
+
+
+\subsection{A Década Internacional das Línguas Indígenas (2022–2032)}
+A Década Internacional das Línguas Indígenas (2022–2032) foi proclamada pela Assembleia Geral da ONU em 2019, após as recomendações da UNESCO, com o objetivo de proteger e revitalizar as línguas indígenas em todo o mundo. Essa iniciativa busca dar continuidade ao Ano Internacional das Línguas Indígenas (2019), que destacou a importância de preservar esses idiomas como parte essencial da diversidade cultural global.
+
+
+Os principais objetivos da Década incluem a preservação, revitalização e promoção das línguas indígenas. Segundo a UNESCO, há um foco especial na documentação de línguas ameaçadas, desenvolvimento de materiais pedagógicos e fortalecimento dos direitos linguísticos dos povos indígenas. Essa abordagem se alinha à Declaração das Nações Unidas sobre os Direitos dos Povos Indígenas (2007), que reforça o direito dos povos indígenas de usar, ensinar e promover suas línguas.
+
+De acordo com dados da UNESCO, cerca de 7.000 línguas são faladas no mundo atualmente, e mais de 40\% estão em risco de extinção, sendo muitas delas indígenas . A perda dessas línguas resulta não apenas na extinção de formas únicas de expressão cultural, mas também na perda de vastos conhecimentos sobre ecossistemas, biodiversidade e práticas sustentáveis que são transmitidos por meio das línguas indígenas \hyperlink{(Skutnabb2000}{(SKUTNABB et al, 2000)}. Essas línguas são também essenciais para a transmissão intergeracional de saberes tradicionais, algo que seria impossível traduzir completamente em outros idiomas \hyperlink{(Skutnabb2000}{(SKUTNABB et al., 2000)}.
+
+
+Alguns exemplos de línguas indígenas que estão no centro das ações da Década incluem:
+
+\begin{itemize}
+    \item Guarani, amplamente falada no Paraguai e reconhecida como língua oficial, é considerada uma das línguas indígenas mais vivas na América Latina \hyperlink{Melia1988} {(MELIA, 1986)}.
+    \item Tupi Antigo, embora extinta como língua nativa, há esforços acadêmicos voltados à revitalização da língua que foi registrada historicamente pelos colonizadores e missionários hoje conhecida como “Tupi Antigo”. Esses esforços justificam-se não apenas pelo impacto cultural e linguístico dessa língua na formação do português brasileiro, mas também pela sua relevância simbólica para comunidades indígenas contemporâneas descendentes, como os Tupinambá, Tupiniquim e Potiguara. Para essas comunidades, o resgate e a preservação da língua representam um elemento central de fortalecimento identitário, memória ancestral e resistência cultural (\hyperlink{Navarro2013}{NAVARRO, 2013}; \hyperlink{Rodrigues1986}{RODRIGUES, 1986})
+
+\end{itemize}
+
+A UNESCO detalha diversas ações previstas para a Década, incluindo: Produção de recursos linguísticos: Criação de dicionários, aplicativos e gramáticas para documentar línguas ameaçadas.
+Educação bilíngue: Inserção das línguas indígenas em currículos escolares para promover o bilinguismo.
+Parcerias globais: Colaborações com comunidades indígenas para desenvolver projetos sustentáveis que promovam o uso diário dessas línguas. Segundo o relatório da ONU , a década visa criar políticas públicas que reconheçam a importância das línguas indígenas para a identidade e os direitos humanos. Além disso, busca sensibilizar governos e a sociedade sobre o papel dessas línguas na promoção da diversidade cultural \hyperlink{UNESCO2021} {(UNESCO, 2021)}
+
+\setlength{\parindent}{1.25cm} % Reativa o recuo dos parágrafos
+
+\subsection{Considerações Culturais e Éticas}
+
+A revitalização e documentação de línguas indígenas não se restringem a desafios técnicos ou linguísticos; envolvem, sobretudo, uma responsabilidade ética e cultural fundamental. Cada língua indígena carrega consigo uma visão de mundo singular, modos próprios de organização social, cosmologias e saberes ancestrais, sendo, portanto, patrimônio imaterial de um povo \hyperlink{Skutnabb2000}{(SKUTNABB-KANGAS et al., 2000)}. Assim, qualquer projeto que busque digitalizar, analisar ou revitalizar tais línguas deve necessariamente respeitar e proteger os direitos culturais das comunidades envolvidas.
+
+O consentimento informado e a participação ativa das comunidades indígenas devem ser princípios centrais em qualquer iniciativa linguística, evitando práticas que possam ser interpretadas como apropriação indevida ou extrativismo cultural \hyperlink{Hinton2001}{(HINTON, 2001)}. Além disso, é essencial que os benefícios decorrentes de tecnologias desenvolvidas  como tradutores automáticos ou bases de dados digitais  sejam compartilhados com as próprias comunidades, garantindo que esses recursos sirvam para fortalecer sua autonomia cultural e linguística.
+
+Diversos estudiosos destacam ainda que o simples registro ou digitalização de uma língua não garante sua vitalidade. Como aponta \hyperlink{Grenoble2006}{(GRENADE, 2006)}, revitalização bem-sucedida depende da integração dos interesses das comunidades, da promoção do uso da língua em contextos cotidianos e do fortalecimento das identidades locais. Nesse sentido, o desenvolvimento de ferramentas computacionais deve ser pensado em colaboração com educadores indígenas, lideranças locais e demais representantes da comunidade, respeitando não só os aspectos técnicos da língua, mas também as dinâmicas sociais que envolvem seu uso.
+
+Outro aspecto ético relevante refere-se ao acesso e à propriedade dos dados. É importante assegurar que os corpora, dicionários e demais materiais produzidos sejam controlados pelas próprias comunidades ou desenvolvidos em parceria, alinhados às diretrizes internacionais sobre direitos linguísticos e autodeterminação dos povos indígenas \hyperlink{UNESCO2021}{(UNESCO, 2021)}.
+
+\chapter{Projetos de Sucesso na Revitalização de Línguas}
+
+Projetos de revitalização de línguas extintas ou ameaçadas oferecem \textit{insights} valiosos para o desenvolvimento de ferramentas de tradução e geração de texto em Tupi Antigo. A seguir, destacam-se iniciativas que lograram êxito significativo.
+
+O Projeto de Revitalização da Língua Manx, na Ilha de Man, é um exemplo notável de ressurgimento linguístico. Após a morte do último falante nativo em 1974, esforços comunitários e educacionais conseguiram reintroduzir o Manx como uma língua viva, com crescente número de falantes proficientes. Métodos empregados incluíram a criação de dicionários digitais, cursos online e a introdução da língua em contextos modernos \hyperlink{Zuckermann2013}{(ZUCKERMANN, 2013)}.
+
+A revitalização da língua hebraica representa um fenômeno sem precedentes no campo da linguística histórica e sociocultural. Diferentemente de outras línguas que se extinguiram, o hebraico conseguiu superar quase dois mil anos de uso limitado a textos religiosos e escritos, tornando-se uma língua moderna, falada cotidianamente. A seguir, detalha-se esse processo singular.Com a destruição do Segundo Templo de Jerusalém em 70 d.C., os judeus foram dispersos pelo Império Romano, fenômeno conhecido como Diáspora. O hebraico deixou de ser a língua vernacular e passou a ser utilizado principalmente em contextos litúrgicos e escritos formais. Durante a Idade Média, manteve-se ativo em textos sagrados, poesia e filosofia, com destaque para a produção de autores como Yehuda Halevi e Maimônides. No entanto, o uso cotidiano do hebraico como língua falada havia praticamente desaparecido \hyperlink{Berezin1977}{(BEREZIN, 1977)}.A Haskalá, movimento iluminista judaico do século XVIII, trouxe mudanças significativas ao incentivar a modernização da língua hebraica e a adaptação de seu vocabulário para temas seculares. Intelectuais como Moses Mendelssohn promoveram o uso do hebraico em literatura e publicações não religiosas, preparando o terreno para sua revitalização como língua viva \hyperlink{Berezin1977}{(BEREZIN, 1977)}. A figura central nesse processo foi Eliezer Ben-Yehuda (1858–1922), frequentemente chamado de "pai do hebraico moderno". Nascido no Império Russo, Ben-Yehuda imigrou para a Palestina em 1881 com a visão de reviver o hebraico como língua nacional dos judeus. Ele acreditava que a revitalização do hebraico era essencial para a construção de uma identidade nacional judaica unificada \hyperlink{BenYehuda2017}{(BEN-YEHUDA, 2017)}.
+
+Ben-Yehuda implementou várias estratégias para alcançar esse objetivo:
+
+\begin{itemize}
+    \item \textbf{Uso Doméstico:} Determinou que sua família falasse exclusivamente em hebraico, criando o primeiro ambiente doméstico hebraico em séculos.
+    \item \textbf{Educação:} Envolveu-se no estabelecimento de escolas onde o hebraico era a língua de instrução, promovendo sua adoção entre as novas gerações.
+    \item \textbf{Lexicografia:} Compilou o "Dicionário Completo do Hebraico Antigo e Moderno", expandindo o vocabulário para incluir termos necessários à vida moderna.
+    \item \textbf{Publicações:} Fundou o jornal "HaTzvi", publicado inteiramente em hebraico, abordando temas contemporâneos e introduzindo novas palavras \hyperlink{BenYehuda2017}{(BEN-YEHUDA, 2017)}.
+\end{itemize}
+
+As ondas migratórias judaicas para a Palestina, conhecidas como Aliyot, desempenharam um papel fundamental na disseminação do hebraico:
+
+\begin{itemize}
+    \item \textbf{Primeira Aliyá (1882–1903):} Judeus da Rússia fundaram colônias agrícolas e adotaram o hebraico como símbolo de identidade nacional.
+    \item \textbf{Segunda Aliyá (1904–1914):} Imigrantes jovens e sionistas defenderam o uso do hebraico em escolas e locais de trabalho, consolidando-o como língua comum \hyperlink{Berezin1977}{(BEREZIN, 1977)}.
+\end{itemize}
+
+Nesse contexto, o hebraico foi adotado como língua de ensino em escolas judaicas, como a Gymnasia Herzliya, estabelecida em 1905, reforçando sua presença na educação e na vida cotidiana.
+
+\subsection{Reconhecimento Oficial e Consolidação no Estado de Israel}
+
+Durante o Mandato Britânico (1920–1948), o hebraico foi oficialmente reconhecido como uma das três línguas oficiais, junto ao inglês e ao árabe. Com a fundação do Estado de Israel em 1948, tornou-se a língua nacional oficial, consolidando-se através de políticas educacionais, mídia e vida pública. O sucesso da revitalização do hebraico é atribuído a uma combinação de fatores históricos, culturais e políticos, incluindo o movimento sionista, a imigração judaica e os esforços incansáveis de indivíduos como Eliezer Ben-Yehuda \hyperlink{Berezin1977}{(BEREZIN, 1977)}.
+
+A revitalização de línguas é um processo complexo que envolve não apenas aspectos linguísticos, mas também sociais, culturais e políticos. O caso do hebraico moderno é frequentemente citado como um exemplo bem-sucedido de renascimento linguístico, oferecendo valiosas lições para iniciativas semelhantes. No entanto, é crucial considerar os impactos que a revitalização de uma língua pode ter sobre outras línguas e culturas, especialmente quando uma língua revitalizada se torna dominante em detrimento de outras línguas originárias. Neste contexto, o exemplo do guarani paraguaio como língua oficial ilustra como a promoção de uma língua pode influenciar a dinâmica linguística regional.
+
+\subsection{Lições da Revitalização do Hebraico}
+
+O renascimento do hebraico moderno, que passou de uma língua litúrgica a um idioma nacional vivo, oferece várias lições importantes:
+
+\begin{itemize}
+    \item \textbf{Engajamento Comunitário:} A participação ativa da comunidade foi essencial para a revitalização do hebraico. Famílias adotaram o hebraico no ambiente doméstico, e a língua foi promovida em escolas e instituições públicas, criando uma base sólida de falantes nativos.
+    \item \textbf{Desenvolvimento de Recursos Linguísticos:} A criação de materiais educacionais, dicionários e literatura em hebraico moderno facilitou o aprendizado e o uso cotidiano da língua.
+    \item \textbf{Apoio Governamental:} Políticas públicas que incentivaram o uso do hebraico em todas as esferas da sociedade foram fundamentais para sua consolidação como língua nacional.
+\end{itemize}
+
+Essas estratégias demonstram que a revitalização linguística bem-sucedida requer um esforço coordenado que engloba educação, políticas públicas e o compromisso da comunidade.
+
+\subsection{Impactos da Revitalização em Outras Línguas}
+
+Embora a revitalização do hebraico seja celebrada como um sucesso, é importante reconhecer que esse processo também teve implicações para outras línguas faladas na região. A promoção do hebraico como língua nacional em Israel levou a uma diminuição no uso de outras línguas judaicas, como o ídiche e o ladino. Essas línguas, que eram amplamente faladas pelas comunidades judaicas na diáspora, sofreram um declínio significativo, com o hebraico assumindo um papel dominante na comunicação cotidiana.
+
+Este fenômeno destaca um desafio comum em processos de revitalização linguística: a ascensão de uma língua pode, inadvertidamente, marginalizar outras línguas minoritárias. Portanto, é crucial que iniciativas de revitalização considerem estratégias para preservar a diversidade linguística e cultural, evitando a substituição de uma língua por outra.
+
+\subsection{O Guarani Paraguaio como Língua Oficial e Seus Efeitos em Línguas Indígenas Menores}
+
+O Paraguai apresenta um caso singular na América Latina, onde o guarani, uma língua indígena, é reconhecido como língua oficial ao lado do espanhol. A Constituição Nacional do Paraguai oficializou o guarani em 1992, refletindo sua profunda integração na identidade nacional paraguaia \hyperlink{UNILA2020}{(UNILA, 2020)}.
+
+No entanto, a oficialização e promoção do guarani também tiveram impactos em outras línguas indígenas menores no país. A predominância do guarani e do espanhol nas esferas pública e educacional contribuiu para o declínio de outras línguas indígenas, que enfrentam desafios para sua sobrevivência. Muitas dessas línguas menores não recebem o mesmo nível de apoio institucional, resultando em uma diminuição no número de falantes e na transmissão intergeracional.
+
+Este cenário ressalta a importância de políticas linguísticas inclusivas que não apenas promovam uma língua indígena dominante, mas também protejam e revitalizem outras línguas indígenas em risco. A experiência paraguaia demonstra que, embora a elevação de uma língua indígena ao status oficial possa fortalecer a identidade cultural nacional, é fundamental implementar medidas que garantam a preservação da diversidade linguística.
+
+\subsection{Considerações para Políticas de Revitalização Linguística}
+
+Ao planejar e implementar políticas de revitalização linguística, é essencial considerar:
+
+\begin{itemize}
+    \item \textbf{Diversidade Linguística:} As políticas devem reconhecer e valorizar a diversidade de línguas presentes em uma região, promovendo medidas que apoiem não apenas a língua principal, mas também as línguas minoritárias.
+    \item \textbf{Participação Comunitária:} As comunidades falantes das línguas em questão devem estar ativamente envolvidas no processo de revitalização, garantindo que suas necessidades e perspectivas sejam atendidas.
+    \item \textbf{Educação Bilíngue ou Multilíngue:} Sistemas educacionais que incorporam múltiplas línguas podem ajudar a preservar e promover a diversidade linguística, evitando a marginalização de línguas menores.
+    \item \textbf{Documentação e Pesquisa:} Investir na documentação de línguas ameaçadas e na pesquisa linguística pode fornecer recursos valiosos para esforços de revitalização e preservação.
+\end{itemize}
+
+Ao aprender com exemplos como o do hebraico moderno e do guarani paraguaio, é possível desenvolver estratégias de revitalização que não apenas revivam línguas, mas também promovam um ambiente onde múltiplas línguas possam coexistir e prosperar.
+
+
+
+\subsubsection{Lições para a Revitalização de Outras Línguas}
+
+O caso do hebraico serve como um modelo singular para o estudo da revitalização linguística em contextos nacionais. Demonstra a importância de uma abordagem multifacetada que engloba educação, mídia, políticas governamentais e, crucialmente, a participação ativa da comunidade. Esses elementos são fundamentais para iniciativas de revitalização de outras línguas, como o Tupi Antigo, oferecendo estratégias e insights valiosos para o sucesso desses empreendimentos \hyperlink{Zuckermann2013}{(ZUCKERMANN, 2013)}.
+
+
+\chapter{Objetivos}
+
+O presente trabalho tem como objetivo central o desenvolvimento de ferramentas computacionais para a tradução automática entre o português e a língua que passou a ser conhecida como Tupi Antigo. Trata-se de uma língua indígena de alta relevância histórica e cultural, amplamente falada no Brasil durante os séculos XVI e XVII, sobretudo ao longo do litoral, e que, embora classificada como extinta em termos de uso corrente, continua presente em nomes, expressões, tradições orais e reivindicações identitárias de diversas comunidades \hyperlink{Rodrigues1986}{(RODRIGUES, 1986)}. A escolha de empregar esse termo (“Tupi Antigo”) será constantemente acompanhada de ressalvas quanto à sua natureza exógena e classificatória, uma vez que a própria noção de “antigo” foi construída a partir de um olhar colonial \hyperlink{Navarro2013}{(NAVARRO, 2013)}.
+
+Diante da urgência imposta pela erosão das línguas indígenas  quadro que a UNESCO reconhece como crítico e que motivou a instituição da Década Internacional das Línguas Indígenas (2022–2032), esta pesquisa se propõe a unir os campos da ciência da computação, linguística e humanidades digitais com o intuito de colaborar com os esforços de preservação e revitalização dessas línguas \hyperlink{UNESCO2021}{(UNESCO, 2021)}. Por meio da criação de um sistema de tradução automático, pretende-se ampliar o acesso a conteúdos em Tupi Antigo, facilitar pesquisas acadêmicas, contribuir com a formação de falantes e apoiar práticas pedagógicas em contextos educativos e culturais diversos.
+
+\section*{Objetivo Geral}
+
+Desenvolver um sistema de tradução automática entre o português e o Tupi Antigo, utilizando abordagens modernas de Processamento de Linguagem Natural (PLN), com foco em técnicas de \textit{fine-tuning} de modelos pré-treinados e estratégias de \textit{transfer learning}, aplicadas a um corpus historicamente fundamentado e linguisticamente anotado.
+
+\section*{Objetivos Específicos}
+
+\begin{itemize}
+    \item Construir e normalizar um corpus bilíngue português–Tupi Antigo, a partir de fontes históricas digitalizadas (catecismos, gramáticas e dicionários dos séculos XVI a XVII), respeitando variações ortográficas e morfológicas;
+    
+    \item Elaborar um pipeline de pré-processamento linguístico capaz de adaptar os dados aos requisitos dos modelos de tradução neural, incluindo etapas de tokenização personalizada, alinhamento paralelo e expansão do vocabulário subword;
+    
+    \item Ajustar e treinar o modelo T5 (\textit{Text-To-Text Transfer Transformer}) a partir do corpus bilíngue, com experimentações que considerem diferentes tamanhos de modelo, número de épocas e estratégias de regularização \hyperlink{Raffel2020}{(RAFFEL et al., 2020)};
+    
+    \item Explorar o uso de línguas geneticamente relacionadas, como o Guarani Paraguaio e o Nheengatu, como intermediárias no processo de \textit{transfer learning}, buscando aumentar a robustez e qualidade da tradução para o Tupi Antigo \hyperlink{Jensen1999}{(JENSEN, 1999)};
+    
+    \item Avaliar a qualidade das traduções geradas com base em métricas automáticas (BLEU, chrF, METEOR), complementadas por análises qualitativas conduzidas com auxílio de especialistas em línguas indígenas, para garantir relevância semântica e fidelidade linguística;
+    
+    \item Desenvolver e disponibilizar publicamente uma interface interativa e acessível para o sistema de tradução, promovendo sua utilização tanto em contextos educacionais quanto comunitários;
+    
+    \item Discutir as implicações éticas do uso de tecnologias de inteligência artificial em contextos de línguas minorizadas, refletindo sobre soberania de dados, respeito às epistemologias indígenas e os limites da intervenção algorítmica em contextos culturais sensíveis \hyperlink{Skutnabb2000}{(SKUTNABB-KANGAS et al., 2000)}.
+\end{itemize}
+
+\section*{Justificativa e Impacto Esperado}
+
+A escolha do Tupi Antigo como foco da presente dissertação se deve a seu papel central na formação do português brasileiro, sua difusão colonial como língua geral, e sua permanência como patrimônio linguístico, embora não mais falado cotidianamente. A escassez de dados digitalizados e anotados representa um dos maiores desafios para a aplicação de técnicas contemporâneas de PLN, apesar de ser uma das línguas antigas mais documentadas atualmente. Assim, o projeto atua também como uma contribuição para a ampliação dos recursos computacionais disponíveis para línguas indígenas.
+
+Além disso, este trabalho se inscreve em um movimento mais amplo de uso das tecnologias digitais em prol da diversidade linguística e epistemológica, alinhando-se a esforços de descolonização do saber. A possibilidade de traduzir textos para o Tupi Antigo tem impacto direto na difusão de conhecimentos históricos, na valorização de identidades indígenas e no fortalecimento de iniciativas de educação bilingue e intercultural. O código e os dados produzidos serão disponibilizados sob licenças abertas, visando fomentar a reprodutibilidade, a transparência e o acesso público ao conhecimento, principalmente para a valorização das comunidades remanescentes.
+
+Por fim, este projeto se configura como uma contribuição inovadora dentro do campo das humanidades digitais, demonstrando como ferramentas computacionais, quando aliadas a um compromisso ético e interdisciplinar, podem se tornar instrumentos de resistência cultural, preservação histórica e revitalização linguística.
+
+
+    
+ \section{Próximos capítulos}
+Nos próximos capítulos, exploramos os pilares que sustentam esta pesquisa e avançamos em direção à preservação do Tupi Antigo:
+
+No \textbf{Capítulo 2 (Revisão da Literatura)}, mergulhamos na rica influência do Tupi no português brasileiro, desde nomes de lugares até expressões cotidianas e elementos da fauna e flora. Além disso, analisamos iniciativas inspiradoras de revitalização linguística, como o renascimento do hebraico moderno e fechamos esse capítulo com uma revisão da literatura de redes neurais que utilizamos.
+
+O \textbf{Capítulo 3 (Metodologia)} detalha o caminho percorrido, desde a coleta e preparação de dados até o treinamento final. Cada etapa do \textit{pipeline} foi cuidadosamente projetada para garantir que o modelo compreenda as nuances do português e do Tupi Antigo, nesse capítulo contamos sobre os desafios dos dados dessa língua e detalhes que aparecerão nos resultados parciais advindos dessa coletânea
+
+
+\chapter{Revisão da Literatura}
+\section{Línguas Indígenas}
+
+
+Estima-se que, no período inicial da colonização, o atual território brasileiro abrigasse aproximadamente 1.175 línguas indígenas distintas. Atualmente, restam cerca de 20\% desse total, um reflexo alarmante do processo contínuo de erosão linguística enfrentado por essas comunidades \hyperlink{COSTA2023}{(COSTA, 2023)}. 
+
+Dados do Censo de 2010 apontam a existência de 274 línguas indígenas no país. No entanto, especialistas de instituições como o Museu Emílio Goeldi e o Museu do Índio alertam para uma possível superestimação, argumentando que o número efetivo de línguas ativamente faladas estaria entre 160 e 180, a depender dos critérios de distinção entre língua e dialeto. Tal ambiguidade evidencia a complexidade de se estabelecer fronteiras linguísticas rígidas no contexto indígena, onde a variação linguística se desenvolve de forma fluida, orgânica e socialmente situada \hyperlink{COSTA2023}{(COSTA, 2023)}.
+
+As línguas indígenas brasileiras são organizadas em famílias, ramos e sub-ramos, e frequentemente exibem processos dinâmicos de diferenciação. Comunidades que compartilhavam um mesmo idioma, ao se dispersarem geograficamente ou permanecerem isoladas por longos períodos, desenvolveram variações fonológicas, lexicais e sintáticas que, ao longo do tempo, podem evoluir para línguas mutuamente ininteligíveis. Segundo Hein van der Voort, linguista do Museu Emílio Goeldi, esse fenômeno ilustra não apenas a vitalidade histórica dessas línguas, mas também a profunda riqueza cultural dos povos indígenas, refletida em sua impressionante diversidade linguística \hyperlink{COSTA2023}{(COSTA, 2023)}.
+
+\section{Ameaças Atuais às Línguas Indígenas}
+
+O Brasil abriga atualmente mais de 160 línguas e dialetos indígenas, representando uma fração das quase sete mil línguas faladas no mundo contemporâneo \hyperlink{ISA2024}{(ISA, 2024)}. No entanto, ao contrário de países como Peru e Bolívia, que reconhecem oficialmente suas línguas indígenas e implementam políticas de proteção, o Brasil ainda não adotou medidas semelhantes em âmbito nacional \hyperlink{IPOL2024}{(IPOL, 2024)}. Essa ausência de reconhecimento oficial e de políticas públicas eficazes coloca muitas dessas línguas em risco de extinção.
+
+Fatores como a urbanização acelerada, a pressão para assimilação cultural e a falta de espaços institucionais onde as línguas indígenas possam ser utilizadas como escolas, meios de comunicação e serviços públicos contribuem significativamente para seu enfraquecimento. A predominância do português como única língua oficial agrava a situação, resultando em uma crescente ruptura na transmissão intergeracional. Muitos jovens indígenas deixam de aprender suas línguas maternas, comprometendo a continuidade do patrimônio linguístico e cultural dos povos originários \hyperlink{BUREAU2024}{(BUREAU, 2024)}.
+
+\subsection{Iniciativas de revitalização linguística e seus desafios}
+
+A preservação e a revitalização das línguas indígenas no Brasil têm sido impulsionadas por uma articulação entre comunidades originárias, pesquisadores e organizações da sociedade civil. Essas ações incluem a documentação sistemática dos idiomas ameaçados, a formação de arquivos sonoros e textuais, bem como o desenvolvimento de programas educacionais bilíngues adaptados às realidades socioculturais de cada povo \hyperlink{COSTA2023}{(COSTA, 2023)}.
+
+No entanto, o impacto dessas iniciativas ainda é limitado diante da ausência de políticas públicas estruturantes. A efetividade de qualquer programa de revitalização depende não apenas do engajamento local, mas também do reconhecimento oficial das línguas indígenas como parte integrante do patrimônio cultural nacional. Isso exige um suporte institucional duradouro, financiamento adequado e, sobretudo, o fortalecimento da presença das línguas indígenas em espaços de prestígio simbólico, como a educação formal, os meios de comunicação e as plataformas digitais \hyperlink{COSTA2023}{(COSTA, 2023)}.
+
+Como salienta Altaci Corrêa Rubim, do Ministério dos Povos Indígenas, as línguas nativas são mais do que instrumentos de comunicação: são “espírito”, essência viva das culturas originárias \hyperlink{COSTA2023}{(COSTA, 2023)}. Sua preservação representa não apenas a continuidade de tradições ancestrais, mas também a afirmação de identidades coletivas que resistem historicamente aos processos de apagamento cultural. Manter essas línguas vivas é, portanto, um ato de resistência e de reconstrução histórica, que contribui para uma concepção plural da identidade brasileira.
+
+O Brasil enfrenta um desafio urgente: proteger seu patrimônio linguístico indígena de forma ampla, articulada e contínua. Iniciativas pontuais, embora valiosas, não são suficientes. É necessário um compromisso estatal que reconheça essas línguas como fundamentais para a diversidade cultural do país e que promova políticas de valorização, registro e uso cotidiano. Garantir a sobrevivência dessas línguas é assegurar que as futuras gerações indígenas possam continuar a viver, sonhar e se expressar em seus próprios idiomas preservando, assim, não apenas palavras, mas mundos inteiros de saber e existência \hyperlink{COSTA2023}{(COSTA, 2023)}.
+
+
+\section{Modelos de Tradução Automática}
+Nos últimos anos, os modelos de tradução automática baseados em redes neurais têm mostrado uma grande eficiência, especialmente com o advento de arquiteturas como o Transformer. O Transformer trouxe mudanças
+significativas para o campo do processamento de linguagem natural (PLN), ao
+substituir redes recorrentes (RNNs) e redes de memória de longo prazo (LSTMs).
+O diferencial do Transformer está no uso do mecanismo de atenção, que permite
+ao modelo focar nas partes mais relevantes de uma sentença durante a tradução,
+independentemente da posição da palavra na frase.
+O Transformer permitiu que os modelos de tradução fossem paralelizados de
+maneira muito mais eficiente, aumentando tanto a velocidade quanto a precisão
+na tradução de grandes volumes de texto. Além disso, o modelo lida melhor com
+11
+frases longas e estruturas complexas, o que é essencial para traduções que exigem
+uma compreensão profunda do contexto.
+Entre os modelos baseados nessa arquitetura, destaca-se o T5 (Text-To-Text
+Transfer Transformer) \hyperlink{Raffel2020}{(RAFFEL, 2020)}. O T5 foi desenvolvido com o conceito
+de converter todas as tarefas de PLN em um formato de texto-para-texto. Isso
+significa que o mesmo modelo pode ser utilizado para tarefas como tradução
+automática, resumo de textos, resposta a perguntas, entre outras. O T5 foi
+amplamente treinado em uma série de tarefas de PLN, e uma de suas principais
+vantagens é a flexibilidade para ser ajustado (fine-tuned) em tarefas específicas,
+como a tradução entre o português e o Tupi Antigo.
+Assim como outros modelos baseados no Transformer, o T5 utiliza a técnica de
+pré-treinamento (pre-trained models), em que o modelo é inicialmente treinado
+em grandes quantidades de dados não supervisionados, como o c4  (\textbf{Colossal Clean Crawled Corpus})\hyperlink{Raffel2020}{(RAFFEL, 2020)} , e
+depois ajustado para tarefas específicas. Esse processo em duas etapas permite
+que o modelo desenvolva um conhecimento geral da linguagem antes de ser refinado para tarefas mais direcionadas, como a tradução automática entre línguas
+específicas.
+A tradução automática feita por modelos como o T5 tem se mostrado altamente eficiente em diversos aspectos, superando métodos tradicionais em termos de
+fluência, coerência e precisão. \hyperlink{Goyal2022}{(GOYAL et. al., 2022)}.  Além disso, técnicas como o \textit{beam search}
+e o ajuste de hiperparâmetros como o tamanho do vocabulário permitem a geração
+de traduções de alta qualidade, mesmo em cenários de recursos limitados, como
+o caso do Tupi Antigo. \hyperlink{PapineNi2002}{(PAPINENI et al, 2002)}. 
+Esses modelos também são capazes de lidar com a ambiguidade linguística
+e com o contexto de forma muito mais eficiente do que as abordagens anteriores.
+O mecanismo de atenção do Transformer, por exemplo, possibilita que o modelo
+considere o contexto global de uma frase antes de gerar a tradução, preservando
+o significado mesmo quando uma palavra ou expressão tem várias interpretações
+possíveis.
+Além disso, a aplicação de modelos baseados no Transformer, como o T5,
+tem um impacto profundo na preservação de línguas em risco de extinção,
+como o Tupi Antigo. A capacidade de treinar modelos com dados limitados e
+ajustá-los para contextos específicos oferece novas oportunidades para preservar e
+disseminar línguas que antes eram difíceis de documentar ou revitalizar.
+Em resumo, o advento de modelos de tradução automática baseados no Transformer, como o T5, trouxe avanços significativos para o campo do PLN. A flexibilidade desses modelos, sua capacidade de pré-treinamento e ajuste fino, juntamente
+com sua habilidade de lidar com contextos e línguas diversas, os tornam ferramentas poderosas para a tradução automática, incluindo línguas de recursos
+limitados, como o Tupi Antigo
+\section{Redes Neurais Artificiais e Modelos de Linguagem Baseados em Transformadores}
+
+As redes neurais artificiais constituem um dos fundamentos centrais da inteligência artificial contemporânea, sendo aplicadas em uma ampla gama de tarefas, como classificação, reconhecimento de padrões, previsão de séries temporais e, mais recentemente, no processamento e geração de linguagem natural. Este capítulo explora os princípios dessas redes, com ênfase em modelos de linguagem baseados na arquitetura de transformadores, como o modelo T5, desenvolvido pela Google e implementado em larga escala pela Hugging Face, que representa um marco na evolução do Processamento de Linguagem Natural (PLN).
+
+Inspiradas no funcionamento dos neurônios biológicos, as redes neurais artificiais consistem em camadas de unidades interconectadas os chamados neurônios artificiais que operam sobre os dados por meio de pesos sinápticos ajustáveis e funções de ativação não lineares. A aprendizagem ocorre por meio da retropropagação do erro e da atualização iterativa dos pesos com base em algoritmos de otimização, como o gradiente descendente. Essa capacidade de aprendizagem permite às redes extrair regularidades a partir de dados brutos e generalizar seu desempenho para entradas inéditas \hyperlink{Goodfellow2016}{(GOODFELLOW et al., 2016)}.
+
+A Figura~\ref{fig:ann-diagram} ilustra a estrutura fundamental de uma rede neural artificial. Nesse esquema, é possível observar o fluxo de dados desde a camada de entrada até a camada de saída, passando por uma ou mais camadas ocultas. Cada conexão entre neurônios é ponderada por um valor ajustável durante o treinamento, permitindo que o modelo aprenda representações a partir dos dados. Esse tipo de arquitetura é a base sobre a qual se desenvolveram modelos mais complexos, como redes convolucionais, recorrentes e os modernos transformadores.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{artificialneuralnetworkdiagram.png}
+  \caption[Diagrama de rede neural artificial]{Diagrama esquemático de uma rede neural artificial, com camadas de entrada, ocultas e de saída conectadas por pesos ajustáveis. Fonte: \hyperlink{Sivanandam2007}{SIVANANDAM et al., 2007}.}
+  \label{fig:ann-diagram}
+\end{figure}
+
+
+Ao longo da última década, o campo evoluiu rapidamente com a introdução de arquiteturas especializadas. Redes neurais convolucionais (CNNs) mostraram-se altamente eficazes em tarefas visuais, como detecção de objetos e segmentação de imagens \hyperlink{LeCun1998}{(LECUN et al., 1998)}, enquanto redes neurais recorrentes (RNNs) foram amplamente adotadas em tarefas sequenciais, como tradução automática e modelagem de linguagem \hyperlink{Hochreiter1997}{(HOCHREITER; SCHMIDHUBER, 1997)}. No entanto, essas arquiteturas apresentavam limitações quanto à paralelização e à modelagem de dependências de longo alcance.
+
+A Figura~\ref{fig:transformer-diagram} apresenta uma visão detalhada da arquitetura Transformer, composta por duas partes principais: o codificador (à esquerda) e o decodificador (à direita). O fluxo se inicia com as representações de entrada sendo transformadas por embeddings posicionais, que mantêm a noção de ordem sequencial dos tokens. O codificador aplica múltiplas camadas (indicadas por $N \times$) contendo mecanismos de atenção multi-cabeça e camadas feedforward, todas envolvidas por operações de normalização e conexões residuais (Add \& Norm). O decodificador, por sua vez, também incorpora múltiplas camadas, com atenção mascarada para processar a saída deslocada (shifted right), garantindo que a predição de cada token dependa apenas dos anteriores. As informações do codificador são integradas ao decodificador por meio de atenção cruzada. Ao final, os vetores processados passam por uma camada linear seguida de uma função softmax para gerar as probabilidades de saída. Essa estrutura modular é a base para modelos como o T5, BERT e GPT, consolidando-se como um padrão para tarefas de processamento de linguagem natural.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{thetransformers.png}
+  \caption[Esquema da arquitetura do Transformer]{Esquema da arquitetura do modelo Transformer, com destaque para os mecanismos de atenção, codificação posicional e camadas feedforward. Essa estrutura, introduzida por Vaswani et al., eliminou a necessidade de recorrência em tarefas sequenciais, permitindo paralelismo e melhor desempenho em PLN. Fonte: adaptado de \hyperlink{Vaswani2017}{VASWANI et al., 2017}. Disponível em: \url{https://arxiv.org/pdf/1706.03762}.}
+  \label{fig:transformer-diagram}
+\end{figure}
+
+Com base em mecanismos de atenção auto-regressiva, os transformadores eliminaram a necessidade de recorrência, permitindo o processamento simultâneo de sequências inteiras e possibilitando ganhos expressivos de eficiência computacional e desempenho. Essa arquitetura tornou-se a base de diversos modelos de grande escala, como BERT \hyperlink{Devlin2019}{(DEVLIN et al., 2019)}, GPT \hyperlink{Radford2018}{(RADFORD et al., 2018)}, e o modelo T5 (Text-to-Text Transfer Transformer), que reformula todas as tarefas de PLN como problemas de tradução entre entradas e saídas textuais \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}.
+
+No contexto desta dissertação, o modelo T5 apresenta-se como uma ferramenta particularmente promissora, uma vez que sua estrutura flexível permite adaptar tarefas específicas de tradução de línguas indígenas a partir de conjuntos de dados relativamente pequenos, por meio de técnicas de *fine-tuning*. A arquitetura baseada em transformadores não apenas aprimora o desempenho, mas também viabiliza o uso de estratégias de preservação linguística e cultural mediadas por tecnologias de ponta.
+A Figura~\ref{fig:comparacao-desempenho} apresenta uma comparação visual entre três arquiteturas de redes neurais amplamente utilizadas em tarefas de Processamento de Linguagem Natural (PLN): redes neurais recorrentes (RNN), convolucionais (CNN) e transformadores. O gráfico posiciona cada arquitetura em termos de tempo de treinamento e acurácia obtida em benchmarks. Nota-se que, embora RNNs e CNNs tenham desempenhos razoáveis em tarefas específicas, os modelos baseados em transformadores apresentam uma curva ascendente mais acentuada, alcançando maiores níveis de acurácia com melhor aproveitamento do tempo de treinamento. Essa superioridade é um dos principais motivos pelos quais os transformadores se consolidaram como a arquitetura dominante em PLN na atualidade.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{rnn_vs_transformers.png}
+  \caption[Comparação entre RNN, CNN e Transformer]{Comparação entre arquiteturas RNN, CNN e Transformer em relação ao tempo de treinamento e à acurácia. A figura evidencia a vantagem dos transformadores em eficiência computacional e desempenho em tarefas de PLN. Fonte: adaptado de \hyperlink{Tay2020}{TAY et al., 2020}. Disponível em: \url{https://arxiv.org/abs/2011.02266}.}
+  \label{fig:comparacao-desempenho}
+\end{figure}
+
+
+
+
+\subsection{Modelos Baseados em Transformadores}
+Os transformadores substituíram as RNNs em muitas aplicações de PLN devido à sua capacidade de capturar relações de longo alcance em sequências por meio do mecanismo de atenção. A arquitetura básica de um transformador consiste em um codificador e um decodificador, cada um composto de camadas de atenção e redes feedforward.
+
+Modelos como BERT  e GPT são construídos com base nos transformadores. Enquanto o BERT é projetado para tarefas de entendimento de linguagem, o GPT é mais adaptado para geração de texto. O T5 (“Text-To-Text Transfer Transformer”) da Hugging Face vai além dessas capacidades ao unificar todas as tarefas de PLN em um paradigma texto-para-texto.
+\section{O Modelo T5 da Google}
+O modelo T5, foi projetado para resolver uma ampla variedade de tarefas de PLN, como tradução, resumo, classificação e resposta a perguntas, sob uma abordagem unificada. Em vez de projetar arquiteturas específicas para cada tipo de tarefa, o T5 utiliza o mesmo modelo para todas elas, simplificando o processo de treinamento e inferência.
+
+A Figura~\ref{fig:t5-diagram} ilustra a proposta central do modelo T5 (Text-to-Text Transfer Transformer), desenvolvida por Raffel et al. \hyperlink{Raffel2020}{(RAFFEL, 2020)}. Esse modelo unifica todas as tarefas de Processamento de Linguagem Natural (PLN) sob o mesmo formato: entradas e saídas são sempre tratadas como sequências textuais. Assim, tarefas como tradução, sumarização, classificação, resposta a perguntas e outras são reformuladas como problemas de conversão de texto em texto. Essa abordagem simplifica o treinamento multitarefa e permite maior generalização, ao mesmo tempo em que mantém a flexibilidade para adaptar o modelo a cenários com dados escassos  como é o caso da tradução de línguas indígenas. A imagem evidencia a arquitetura encoder-decoder do T5 e o princípio da reformulação universal de tarefas textuais, consolidando sua relevância como base para modelos personalizáveis em diferentes domínios linguísticos.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{t5.png}
+  \caption[Diagrama do modelo T5]{Diagrama representando a estrutura e o princípio do modelo T5, que reformula todas as tarefas de PLN como transformações de texto em texto. Fonte: adaptado de \hyperlink{Raffel2020}{RAFFEL et al., 2020}. Disponível em: \url{https://arxiv.org/pdf/1910.10683}.}
+  \label{fig:t5-diagram}
+\end{figure}
+
+
+
+\subsection{Características Principais do T5}
+
+O modelo T5 (Text-to-Text Transfer Transformer), proposto por Raffel et al. \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}, adota uma abordagem unificada e flexível para o Processamento de Linguagem Natural (PLN), reformulando todas as tarefas como problemas de transformação de texto em texto. Essa estratégia simplifica a arquitetura do modelo, permitindo que entradas e saídas, independentemente da tarefa (tradução, resumo, classificação, resposta a perguntas, etc.), sejam tratadas como sequências linguísticas codificadas.
+
+\begin{itemize}
+  \item \textbf{Paradigma Texto-para-Texto:} O T5 representa todas as tarefas em formato textual padronizado. Por exemplo, uma tarefa de tradução é formulada como \textit{“translate English to French: How are you?”}, cuja saída esperada seria \textit{“Comment ça va?”}. Essa formulação homogênea permite treinar o modelo de forma multitarefa, promovendo maior generalização e reutilização do conhecimento entre diferentes tipos de tarefa \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}.
+
+  \item \textbf{Tamanhos Variados:} O T5 está disponível em múltiplas variantes, como T5-Small, T5-Base, T5-Large, T5-3B e T5-11B (também chamado de T5-XXL), com quantidades crescentes de parâmetros. Essa escalabilidade possibilita ajustar o modelo às restrições computacionais e aos objetivos de cada aplicação, sendo ideal tanto para testes rápidos quanto para implementações de alta performance \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}.
+
+  \item \textbf{Treinamento Multitarefa:} O treinamento do T5 foi realizado sobre o Colossal Clean Crawled Corpus (C4), um grande conjunto de dados extraído da web, contendo aproximadamente 750 GB de texto. Durante esse processo, o modelo foi exposto a diversas tarefas simultaneamente, como preenchimento de lacunas, tradução, classificação e resposta automática a perguntas. Essa estratégia multitarefa permite ao T5 desenvolver uma compreensão mais ampla das regularidades linguísticas, promovendo maior capacidade de transferência entre domínios \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}.
+
+\end{itemize}
+
+
+Além de sua estrutura modular e flexível, o T5 se diferencia de modelos anteriores como BERT e GPT em diversos aspectos fundamentais. Enquanto o BERT (Bidirectional Encoder Representations from Transformers) opera exclusivamente com codificadores e é pré-treinado para tarefas como preenchimento de lacunas e classificação de sentenças \hyperlink{Devlin2019}{(DEVLIN et al., 2019)}, e o GPT (Generative Pre-trained Transformer) utiliza apenas decodificadores em tarefas de predição autoregressiva \hyperlink{Radford2018}{(RADFORD et al., 2018)}, o T5 combina ambas as estruturas, codificador e decodificador em um modelo seq2seq com pré-treinamento multitarefa.
+
+Essa arquitetura híbrida torna o T5 particularmente adequado para tarefas de tradução automática, incluindo aquelas voltadas à documentação e preservação de línguas com poucos recursos computacionais disponíveis. No contexto da presente dissertação, a adoção do T5 se mostra vantajosa por permitir o uso de estratégias de \textit{fine-tuning }sobre pequenos conjuntos de dados anotados, como os disponíveis para o Tupi Antigo. Além disso, o paradigma texto-para-texto facilita a adaptação do modelo a tarefas específicas, como a geração de glosas, a normalização de variantes ortográficas ou a criação de dicionários bilíngues. Assim, o T5 não apenas oferece desempenho competitivo, mas também promove um ecossistema computacional mais acessível e customizável para projetos de revitalização linguística.
+
+\section{Preparação de Dados e Fine-Tuning do T5}
+
+O processo de adaptação do modelo T5 para tarefas específicas, como a tradução do português para o Tupi Antigo, envolve uma etapa conhecida como \textit{fine-tuning}. Essa técnica consiste em ajustar um modelo pré-treinado a um novo conjunto de dados, geralmente menor e mais específico, mantendo a arquitetura e os pesos aprendidos durante o treinamento original. No contexto de línguas com recursos limitados, como é o caso do Tupi Antigo, o \textit{fine-tuning} se mostra uma estratégia eficiente, pois permite aproveitar o conhecimento linguístico previamente incorporado ao modelo, com base em grandes corpora multilíngues, para então especializá-lo em uma tarefa de nicho.
+
+Para realizar esse ajuste, é fundamental que os dados estejam organizados de forma estruturada e consistente. No caso de modelos baseados no paradigma texto-para-texto, como o T5, tanto as entradas quanto as saídas são representadas como sequências textuais. Assim, cada exemplo de treinamento deve conter uma instrução clara (por exemplo, um comando de tradução) e a respectiva resposta textual esperada. Essa formulação favorece a generalização do modelo e sua capacidade de transferir conhecimento entre tarefas distintas, conforme apontado por \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}.
+Uma vez preparados os dados, o treinamento supervisionado é conduzido em ciclos de retropropagação do erro, nos quais o modelo ajusta iterativamente seus parâmetros internos para minimizar a diferença entre a saída gerada e a saída esperada. O uso de modelos como o T5 em cenários de baixa disponibilidade de dados linguísticos tem se mostrado promissor especialmente por sua arquitetura encoder-decoder, que permite lidar com transformações linguísticas complexas, como mudanças de ordem sintática e flexão morfológica, características fortemente presentes nas línguas indígenas brasileiras.
+
+
+\section{Implementação com a Biblioteca Transformers}
+
+A implementação do modelo T5 neste trabalho foi realizada com o auxílio da biblioteca \textit{Transformers}, desenvolvida pela Hugging Face, que oferece uma infraestrutura robusta para o uso de modelos pré-treinados de Processamento de Linguagem Natural (PLN). Essa biblioteca disponibiliza interfaces unificadas para dezenas de arquiteturas, incluindo o T5, permitindo que tarefas como tradução, resumo, classificação e resposta automática a perguntas sejam executadas com relativa simplicidade e consistência.
+
+O modelo T5 pode ser facilmente adaptado a novas tarefas por meio de um processo de geração de texto condicionado a uma entrada textual. A biblioteca cuida internamente do processo de tokenização, codificação e decodificação das sequências, bem como da interação com o modelo propriamente dito. Isso significa que, uma vez ajustado o modelo com os dados específicos, torna-se possível empregar a arquitetura T5 em aplicações reais com poucas etapas operacionais.
+
+A praticidade dessa implementação é particularmente relevante para cenários de pesquisa e desenvolvimento com foco em línguas minoritárias, como o Tupi Antigo. Ao permitir a conversão direta de instruções textuais em saídas geradas automaticamente, a biblioteca \textit{Transformers} favorece a criação de sistemas de tradução, interfaces de consulta linguística e até protótipos de ferramentas educacionais voltadas à valorização de línguas indígenas. Além disso, a padronização da interface da Hugging Face facilita a replicação e o compartilhamento de modelos, contribuindo para a abertura e a reprodutibilidade científica na área de PLN \hyperlink{Wolf2020}{(WOLF et al., 2020)}.
+
+\chapter{Metodologia}  
+ 
+\section{Dados}
+
+Este trabalho utilizou um conjunto de dados compilado a partir de obras em Tupi Antigo, com ênfase especial nas gramáticas contemporâneas e materiais lexicográficos voltados à sistematização da língua. Entre essas fontes, destaca-se a gramática e o dicionário elaborados por Eduardo de Almeida Navarro, que exercem papel central na consolidação de um modelo de Tupi Antigo voltado para fins pedagógicos e linguísticos. 
+
+As obras utilizadas para a construção do corpus foram:
+
+\begin{itemize}
+    \item \textit{Curso de Tupi Antigo}, de R. A. L. Barbosa \hyperlink{BARBOSA2019}{(BARBOSA, 2019)}, que apresenta uma abordagem pedagógica baseada em exercícios e estruturas sintáticas recorrentes;
+    \item \textit{A Role and Reference Grammar Description of Tupinambá}, de Fabricio Ferraz Gerardi \hyperlink{GERARDI2020}{(GERARDI, 2020)}, que descreve a língua a partir da perspectiva da Gramática.
+    \item \textit{Dicionário de Tupi Antigo: a língua indígena clássica do Brasil}, de Eduardo de Almeida Navarro \hyperlink{NAVARRO2013}{(NAVARRO, 2013)}, que reúne vocabulário classificado com base em fontes históricas e análise etimológica;
+    \item \textit{Poemas: Tupi e Português}, de José de Anchieta, com edições bilíngues organizadas por Navarro \hyperlink{ANCHIETA2004}{(ANCHIETA, 2004)}, os quais fornecem pares textuais paralelos fundamentais para alinhamento linguístico entre as duas línguas.
+\end{itemize}
+
+
+Os poemas de Anchieta foram particularmente úteis por apresentarem versões paralelas em Tupi e em português, permitindo uma análise comparativa e facilitando a organização do córpus, tendo o alinhamento textual entre as duas línguas.
+
+Cada par de frases em português e Tupi Antigo  foi revisado manualmente, com atenção especial à correspondência semântica e à estrutura gramatical. Em casos de variação ortográfica ou divergência entre fontes, adotou-se como referência a normalização proposta por Navarro \hyperlink{NAVARRO2013}{(2013)}, que tem sido amplamente utilizada em contextos didáticos e acadêmicos contemporâneos. Esse procedimento buscou garantir a coerência interna do corpus, facilitando tanto o treinamento supervisionado do modelo quanto a avaliação qualitativa dos resultados gerados.
+
+Grande parte dos dados utilizados estava originalmente disponível em documentos físicos ou digitalizados. Esses materiais incluíam informações detalhadas sobre a gramática e vocabulário do Tupi Antigo, fornecendo uma base sólida para os objetivos deste estudo. Para tornar esses textos acessíveis e processáveis, aplicou-se a tecnologia de Reconhecimento Óptico de Caracteres (\textit{Optical Character Recognition} - OCR). A ferramenta utilizada foi o \textit{Tesseract OCR}, que permitiu a conversão de imagens digitalizadas em texto editável. Esse processo enfrentou desafios, como a presença de ruídos em imagens antigas, variações de fontes e uma organização por vezes inconsistente dos documentos. Após a extração, foi necessário um intenso trabalho de pós-processamento para corrigir erros causados pelo OCR, ajustar caracteres mal interpretados e alinhar o texto extraído às normas linguísticas do Tupi Antigo.  
+
+Com os dados estruturados, realizou-se um pré-processamento adicional para assegurar sua adequação ao uso em modelos de processamento de linguagem natural (PLN). Esse pré-processamento incluiu etapas como a \textit{tokenização}, que dividiu o texto em unidades menores, como palavras ou frases, facilitando a análise, e a normalização, que padronizou os textos ao corrigir inconsistências e converter os dados para letras minúsculas.
+
+Esse fluxo de trabalho assegurou que o conjunto de dados fosse não apenas fiel às fontes originais, mas também consistente e adaptado às demandas computacionais. Os textos obtidos passaram a ter qualidade suficiente para as próximas etapas de análise e para o treinamento de modelos computacionais, garantindo a representatividade da língua Tupi Antigo em um contexto moderno.  
+
+\section{Pré-processamento dos Dados}  
+
+Após a extração, os dados passaram por uma série de etapas de pré-processamento, fundamentais para sua utilização em modelos de processamento de linguagem natural (PLN). Essas etapas incluíram:  
+
+\begin{enumerate}
+    \item \textbf{Tokenização:} Divisão do texto em unidades menores, como palavras ou frases, para facilitar a análise e o treinamento do modelo.  
+
+
+    \item \textbf{Normalização:} Padronização do texto, incluindo a conversão para letras minúsculas e a correção de erros ortográficos identificados.  
+
+\end{enumerate}  
+
+Esses passos foram essenciais para garantir a qualidade e a uniformidade do conjunto de dados, tornando-os adequados para as próximas etapas de análise e treinamento de modelos computacionais.  
+
+\subsection{Buscador de Palavras}\label{sec:capitulo3-3}
+Assim que foi feito esse pré-processamento, foi gerado um buscador de palavras nesse banco de dados, o link está disponível no rodapé dessa mesma página. \footnote{Disponível em: \url{https://colab.research.google.com/drive/1vYI30MxwiDEANiXkMbkMwO0uMYMlQQkL?usp=sharing}}. Alguns exemplos de saídas: 
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|p{7cm}|}
+\hline
+\textbf{Entrada} & \textbf{Tradução} & \textbf{Observação} \\
+\hline
+Deus & Tupã & Tradução direta \\
+\hline
+abrigo & taiupara, 'anga & (no mato); 'anga também é usada para abrigos náuticos \\
+\hline
+\end{tabular}
+\caption{Exemplos de uso do buscador de palavras em Tupi Antigo.}
+\label{tab:exemplo-buscador}
+\end{table}
+
+
+\section{Jogo desenvolvido com base no córpus pré- processado}
+
+
+O Tupi Play  é uma aplicação web gamificada desenvolvida com o objetivo de revitalizar e promover o ensino da língua Tupi por meio de uma experiência digital acessível, lúdica e educativa. A proposta parte da constatação da progressiva extinção das línguas indígenas, especialmente do Tupi, cuja proibição oficial em 1775 impactou diretamente na sua transmissão intergeracional. A plataforma, baseada em frameworks como Django, MySQL e bibliotecas modernas de frontend, oferece uma solução tecnológica voltada ao aprendizado do vocabulário e estrutura do Tupi, especialmente para falantes do português. 
+
+Além de proporcionar uma experiência de aprendizado personalizada e acessível, inclusive para pessoas com deficiência visual, o Tupi Play II promove a valorização da cultura indígena, conectando inovação pedagógica, design centrado no usuário e diálogo com comunidades tradicionais. 
+A aplicação está disponível em: \href{https://tupiplay.pythonanywhere.com/}{Tupi Play II – Jogar Para Reviver}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{tupiplay.png}
+    \caption{TupiPlay- Acerte frases em tupi antigo:}
+    \label{fig2:TupiPlay}
+\end{figure}
+\section{Treinamento para Redes Neurais}
+
+A preparação de dados é uma etapa crítica no desenvolvimento de modelos de aprendizado de máquina, especialmente no campo do Processamento de Linguagem Natural (PLN). A forma como os dados são organizados, representados e disponibilizados influencia diretamente a capacidade de generalização do modelo, sua eficiência durante o treinamento e a qualidade dos resultados obtidos. Para modelos baseados em arquitetura \textit{transformer}, como o T5, essa etapa demanda não apenas um alinhamento semântico entre entrada e saída, mas também uma estrutura formalizada que permita a correta ingestão pelo \textit{pipeline} computacional \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}.
+
+No presente trabalho, os dados foram convertidos para o formato \texttt{JSON} (JavaScript Object Notation), amplamente utilizado em PLN por sua flexibilidade, legibilidade e compatibilidade com as bibliotecas modernas de aprendizado profundo, como a \texttt{datasets} da \textit{Hugging Face} \hyperlink{Wolf2020}{(WOLF et al., 2020)}. Esse formato permite representar cada exemplo como um objeto contendo campos bem definidos como \texttt{input} e \texttt{target} facilitando o mapeamento direto entre os dados textuais e as instruções de aprendizado supervisionado.
+
+A escolha do formato \texttt{JSON} também está alinhada às boas práticas em ciência de dados linguísticos, conforme sugerido por Bird et al. \hyperlink{Bird2009}{(BIRD el al., 2009)}, que destacam a importância de representações estruturadas, reutilizáveis para o avanço de projetos linguísticos computacionais. Diferentemente de formatos lineares como \texttt{.csv} ou  o \texttt{JSON} permite aninhar informações contextuais adicionais, como metadados linguísticos, categorias morfossintáticas ou anotações gramaticais, tornando-se particularmente útil em contextos de línguas indígenas, onde a variação lexical e gramatical pode ser altamente expressiva.
+
+Além disso, como destaca Tenney et al. \hyperlink{Tenney2019}{(TENNEY et. al, 2019)}, a coerência na estrutura dos dados de entrada é um fator determinante para o desempenho de modelos do tipo encoder-decoder, uma vez que inconsistências ou variações de formato podem comprometer o alinhamento semântico entre as sequências. A estruturação dos pares português–tupi em objetos JSON, com comandos explícitos (como “traduzir para tupi antigo:”), contribui para reforçar o aprendizado multitarefa, ao explicitar o objetivo da tarefa dentro da própria entrada textual, estratégia recomendada no pré-treinamento e ajuste fino do T5 \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}.
+
+A organização dos dados em \texttt{JSON} também viabilizou a construção de subconjuntos estratificados de treino, validação e teste, facilitando a experimentação controlada com diferentes quantidades de dados, complexidades linguísticas e níveis de ruído. Esse tipo de controle é essencial em PLN de baixo recurso, uma vez que os corpora disponíveis, além de reduzidos, podem conter inconsistências decorrentes de reconstruções históricas ou ortografias não padronizadas. Por fim, essa estratégia de preparação dos dados se conecta à proposta de um PLN sensível à diversidade linguística e cultural, conforme defendem\hyperlink{Zampieri2022}{(ZAMPIERI et al. , 2022)}, ao tornar possível a inclusão de línguas com baixa representatividade nos grandes modelos de linguagem. Ao adotar práticas de curadoria rigorosa, representação padronizada e estrutura flexível, a conversão para \texttt{JSON} estruturado torna-se um elemento central na viabilização do uso de tecnologias contemporâneas em contextos de revitalização e documentação linguística.
+
+Essa estrutura simplificada permitiu que o JSON se tornasse a fonte principal
+para o pré-processamento e integração com modelos de NLP.
+
+
+\subsection*{Validação dos Dados}
+
+Antes de iniciar o processo de treinamento, foi realizada uma etapa de validação estrutural dos dados com o objetivo de garantir a integridade do corpus e sua compatibilidade com os requisitos do modelo. Essa etapa consistiu na verificação sistemática da presença dos campos essenciais: instrução de entrada e sequência-alvo, assegurando que todos os exemplos estivessem completos e semanticamente coerentes. Como destacam LeCun, Bengio e Hinton \hyperlink{LeCun2015}{(LECUN, 2015)}, a qualidade dos dados de entrada exerce influência decisiva sobre a eficiência do treinamento e a capacidade de generalização dos modelos de aprendizado profundo.
+
+Durante a validação, exemplos inconsistentes, ambíguos ou incompletos foram removidos ou reescritos com base na ortografia do Navarro. Essa filtragem é fundamental para reduzir o ruído nos dados, evitando que o modelo aprenda padrões espúrios ou contraditórios, o que comprometeria seu desempenho em tarefas de inferência \hyperlink{Zampieri2022}{(ZAMPIERI et al., 2022)}.
+
+\subsection*{Tokenização e Compatibilização com o Modelo}
+
+Após a validação e estruturação dos pares de entrada e saída, os dados foram submetidos a um processo de \textit{tokenização}, etapa que consiste na conversão de texto natural em sequências de unidades básicas (\textit{tokens}), interpretáveis pelo modelo. Utilizou-se o tokenizador específico do T5, que segue a lógica do SentencePiece, uma técnica baseada em subpalavras desenvolvida para lidar com vocabulários abertos e línguas morfologicamente ricas \hyperlink{Kudo2018}{(KUDO; RICHARDSON, 2018)}.
+
+A tokenização foi configurada com as seguintes características:
+
+\begin{itemize}
+    \item \textbf{Representação Tensorial:} Os \textit{tokens} foram convertidos em tensores, permitindo a sua integração direta com \textit{frameworks} de treinamento como o \textit{PyTorch}. Essa etapa é essencial para a aplicação de operações matriciais otimizadas durante o aprendizado.
+\end{itemize}
+
+Segundo . \hyperlink{Sennrich2016}{(SEENRICH et al. ,2016)}, o uso de segmentação sublexical, como a adotada pelo \textit{SentencePiece}, é especialmente útil para cenários de tradução com vocabulários limitados ou línguas de baixa representação computacional, como o Tupi Antigo.
+
+\subsection*{Desafios e Considerações}
+
+Durante o desenvolvimento do corpus e sua preparação para o treinamento, diversos desafios metodológicos e técnicos foram identificados. A seguir, destacam-se os principais:
+
+\begin{itemize}
+    \item \textbf{Ruídos e Erros Introduzidos pelo OCR:} A digitalização de documentos históricos, por meio de Reconhecimento Óptico de Caracteres (OCR), acarretou a introdução de erros tipográficos e segmentações incorretas de palavras. Como observado por \hyperlink{Smith2007}{(SMITH, 2007)}, a taxa de erro do OCR aumenta significativamente em textos antigos ou manuscritos, exigindo pós-processamento manual intensivo.
+   
+    \item \textbf{Ambiguidade Lexical e Sintática:} A polissemia e a flexão livre em Tupi Antigo tornam a tarefa de tradução desafiadora. Um mesmo termo pode assumir múltiplas funções sintáticas ou significados contextuais, dificultando a definição de correspondências fixas. Essa característica reforça a necessidade de curadoria humana no alinhamento dos pares de dados.
+    \item \textbf{Escassez de Dados Estruturados:} Apesar da ampla produção documental em Tupi Antigo, grande parte do material disponível encontra-se em formato não estruturado para um possível treinamento. A organização manual do corpus, a partir das obras de referência, exigiu decisões interpretativas e linguísticas complexas, um desafio comum em tarefas de PLN voltadas a línguas com poucos recursos \hyperlink{Ardila2020}{(ARDILA et al., 2020)}.
+\end{itemize}
+
+\subsection{Contribuições para o Sistema de Tradução}
+
+A metodologia adotada para a preparação dos dados resultou em um conjunto de contribuições concretas para o desenvolvimento de sistemas de tradução automática voltados ao Tupi Antigo:
+
+\begin{itemize}
+    \item \textbf{Criação de um Corpus Limpo e Estruturado:} A construção cuidadosa do corpus viabilizou o treinamento eficaz de modelos modernos de tradução, respeitando as especificidades morfológicas e sintáticas da língua.
+    
+    \item \textbf{Preservação de Informações Linguísticas Críticas:} O corpus preserva dados valiosos sobre conjugação verbal, estrutura da frase e uso lexical, contribuindo para a documentação e revitalização da língua indígena.
+    
+    \item \textbf{\textit{Framework} Reprodutível e Expansível:} A estrutura adotada permite a incorporação de novos dados provenientes de outras fontes históricas, tornando o sistema adaptável e reprodutível em contextos similares.
+\end{itemize}
+
+O \textit{pipeline} não apenas facilitou a aplicação de modelos de NLP, mas também
+contribuiu para a preservação da língua Tupi Antigo, ao integrá-la a tecnologias
+contemporâneas de processamento de linguagem.
+
+\section{Hipótese Tradutória: Tradução Direta vs. Tradução com Intermediário}
+
+A hipótese central deste trabalho considera duas abordagens possíveis para a construção de um sistema de tradução automática entre o português e o Tupi Antigo: a primeira consiste em uma tradução direta entre essas duas línguas; a segunda explora a utilização de uma língua intermediária, como o Guarani ou o Nheengatu, como ponte para o treinamento e o alinhamento semântico.
+
+A tradução direta pressupõe a existência de um corpus paralelo robusto entre o português e o Tupi Antigo, condição que permitiria o treinamento de um modelo seq2seq com supervisão explícita e alinhamento lexical preciso. No entanto, como salientam \hyperlink{Zoph2016}{(ZOPH et al., 2016)} e \hyperlink{Firat2016}{(FIRAT et al., 2016)}, esse tipo de abordagem é fortemente dependente da disponibilidade de dados paralelos de alta qualidade, o que constitui um desafio no caso do Tupi Antigo, dada sua condição de língua extinta e a escassez de fontes alinhadas.
+
+Por outro lado, a estratégia de tradução com pivô (\textit{pivot translation})  amplamente estudada em contextos de \textit{low-resource machine translation} consiste em empregar uma terceira língua como elo entre a língua de origem e a de destino. Essa técnica tem demonstrado bons resultados em diversos experimentos, sobretudo quando o pivô compartilha traços linguísticos relevantes com a língua-alvo \hyperlink{Tang2020}{(TANG et al., 2020)}
+. No presente contexto, tanto o Guarani quanto o Nheengatu são candidatos viáveis a esse papel, por apresentarem continuidade histórica com o Tupi Antigo, além de possuírem documentação linguística mais extensa e comunidades falantes ativas.
+
+Como destacam de  \hyperlink{Souza2023}{(SOUZA et al., 2023)}, o Nheengatu preserva grande parte da estrutura sintática e do léxico do Tupi, ao mesmo tempo em que foi moldado por séculos de uso em contextos multilinguísticos. Da mesma forma, o Guarani pertencente à mesma família tupi-guarani compartilha traços morfológicos e raízes vocabulares que podem servir como base para o mapeamento de padrões linguísticos no modelo de tradução.
+
+Portanto, a hipótese adotada neste trabalho é que, embora a tradução direta proporcione maior fidelidade ao Tupi Antigo em um cenário ideal, a utilização de um intermediário bem documentado pode mitigar as limitações impostas pela escassez de dados, ampliando a capacidade de generalização do modelo e reduzindo ambiguidades semânticas e morfossintáticas. Essa abordagem é especialmente pertinente em contextos de PLN para línguas indígenas, nos quais é necessário articular documentação linguística, reconstrução histórica e ferramentas computacionais de forma estratégica e adaptativa.
+Como representado na Figura~\ref{fig:traducao-direta}, a tradução direta entre o Português e o Tupi Antigo pressupõe um alinhamento sem intermediários, exigindo um corpus paralelo robusto entre as duas línguas.
+
+
+
+    % Primeiro gráfico: Tradução direta Português -> Tupi Antigo
+\begin{figure}[H]
+    \centering
+    \textbf{Tradução Direta (Português $\leftrightarrow$ Tupi Antigo)}\\[1em]
+    \begin{tikzpicture}[node distance=4cm, thick, ->, >=latex]
+        % Nós
+        \node (port) [draw, ellipse, minimum width=2.5cm, minimum height=1cm] {Português};
+        \node (tupi) [draw, ellipse, right of=port, minimum width=2.5cm, minimum height=1cm] {Tupi Antigo};
+        
+        % Setas
+        \draw[->] (port) -- node[above] {Direto} (tupi);
+        \draw[->] (tupi) -- (port);
+    \end{tikzpicture}
+    \caption{Tradução direta entre Português e Tupi Antigo.}
+    \label{fig:traducao-direta}
+\end{figure}
+A Figura~\ref{fig:treinamento-proximal-clean} ilustra a hipótese de treinamento com uso de línguas proximais, em que o Guarani Paraguaio atua como intermediário no processo de tradução entre o Português e o Tupi Antigo.
+
+
+\begin{figure}[H]
+    \centering
+    \textbf{Treinamento utilizando linguagem proximais}\\[1em]
+    \begin{tikzpicture}[node distance=5cm, thick, ->, >=latex]
+        % Nós principais
+        \node (port) [draw, ellipse, minimum width=3cm, minimum height=1cm] {Português};
+        \node (tupi) [draw, ellipse, right of=port, xshift=6cm, minimum width=3cm, minimum height=1cm] {Tupi Antigo};
+        
+        % Nó intermediário acima
+        \node (guarani) [draw, ellipse, above of=$(port)!0.5!(tupi)$, yshift=2cm, minimum width=3.5cm, minimum height=1cm] {Guarani Paraguaio};
+        
+        % Setas diretas
+        \draw[->, thick] (port) -- (tupi);
+        
+        % Setas intermediárias
+        \draw[->, thick, dashed] (port) -- (guarani);
+        \draw[->, thick, dashed] (guarani) -- (tupi);
+    \end{tikzpicture}
+    \caption{Tradução utilizando treinamento com linguagem proximais.}
+    \label{fig:treinamento-proximal-clean}
+\end{figure}
+
+
+\chapter{Resultados Parciais}
+\vspace{0.5em}  % espaço opcional para dar um respiro após o título
+
+
+{\justifying  % força o texto a ocupar toda a linha (alinhamento total)
+Como um dos primeiros resultados foi criado um tradutor direto de palavras, algo muito próximo de folhear um dicionário físico como foi tratado rapidamente no capítulo \ref{sec:capitulo3-3}, no qual há informação de como acessá-lo e de alguns resultados.
+Para isso, tivemos alguns passos que serão descritos abaixo.
+
+\section{Processo de Desenvolvimento do Tradutor de Palavras}
+
+O processo de desenvolvimento do sistema inicial de tradução consistiu na criação de um script capaz de acessar, organizar e consultar um banco de dados lexical entre o português e o Tupi Antigo. A etapa inicial envolveu o acesso automatizado ao arquivo de dados, previamente armazenado em uma plataforma na nuvem, de forma a evitar a necessidade de operações manuais por parte do usuário.
+
+Com o arquivo disponível localmente, os dados foram organizados em uma estrutura que permitisse associar cada palavra em português à sua correspondente em Tupi Antigo. Esse procedimento exigiu a leitura e a limpeza do conteúdo da planilha, eliminando informações desnecessárias e reestruturando o material de forma compatível com os critérios estabelecidos para a construção do tradutor.
+
+Em seguida, os dados foram reorganizados em pares estruturados, nos quais cada termo em português foi vinculado a sua tradução correspondente. Essa reorganização teve como objetivo facilitar consultas rápidas e diretas, simulando o funcionamento de um dicionário digital. O sistema foi desenvolvido para ser capaz de realizar buscas por palavras, retornando a tradução correspondente ou, em caso de ausência, fornecendo uma resposta padronizada ao usuário.
+
+O fluxo do sistema foi estruturado para ser interativo: ao ser iniciado, o tradutor solicita uma palavra ao usuário e retorna a tradução correspondente, repetindo esse processo até que o usuário decida encerrar a consulta. Todo o processo foi planejado de modo a garantir uma experiência simples, eficiente e resiliente, com mecanismos para lidar com eventuais inconsistências nos dados ou falhas durante a execução do sistema.
+
+Esse primeiro protótipo de tradutor de palavras representa uma etapa inicial na aplicação de tecnologias computacionais à documentação linguística do Tupi Antigo, permitindo não apenas o acesso a traduções lexicais básicas, mas também a criação de uma base estruturada que poderá ser expandida e aprimorada em etapas futuras do projeto.\\
+A Figura~\ref{fig:fluxo-tradutor-palavras} apresenta o fluxo lógico do sistema desenvolvido, desde o carregamento dos dados até a interação contínua com o usuário.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=1.2cm and 2.2cm, every node/.style={align=center, font=\small}]
+
+% Nós
+\node (start) [draw, rectangle, rounded corners, fill=gray!10] {Início do programa};
+\node (download) [below=of start, draw, rectangle, fill=blue!10] {Download automático\\do arquivo de dados};
+\node (process) [below=of download, draw, rectangle, fill=blue!10] {Limpeza e organização\\dos dados};
+\node (dictionary) [below=of process, draw, rectangle, fill=blue!10] {Criação da estrutura\\de consulta};
+\node (loop) [below=of dictionary, draw, diamond, aspect=2, fill=orange!15] {Usuário insere uma palavra};
+\node (check) [below left=0.8cm and 1.8cm of loop, draw, rectangle, fill=green!15] {Palavra encontrada:\\mostrar tradução};
+\node (notfound) [below right=0.8cm and 1.8cm of loop, draw, rectangle, fill=red!15] {Palavra ausente:\\mensagem padrão};
+\node (again) [below=1.8cm of loop, draw, diamond, aspect=2, fill=orange!15] {Deseja continuar?};
+\node (end) [below=of again, draw, rectangle, rounded corners, fill=gray!10] {Encerramento};
+
+% Conexões
+\draw[->] (start) -- (download);
+\draw[->] (download) -- (process);
+\draw[->] (process) -- (dictionary);
+\draw[->] (dictionary) -- (loop);
+\draw[->] (loop) -- (check);
+\draw[->] (loop) -- (notfound);
+\draw[->] (check) |- (again);
+\draw[->] (notfound) |- (again);
+\draw[->] (again) -- node[right] {não} (end);
+\draw[->] (again) to[out=180,in=270] node[left] {sim} (loop);
+
+\end{tikzpicture}
+\caption{Fluxo de funcionamento do tradutor de palavras: do carregamento dos dados à interação com o usuário.}
+\label{fig:fluxo-tradutor-palavras}
+\end{figure}
+
+
+\section{Treinamento do Modelo T5 para Tradução Português–Tupi Antigo}
+
+O treinamento do modelo T5 Small para a tarefa de tradução entre o português e o Tupi Antigo teve como objetivo adaptar uma arquitetura moderna de linguagem natural a um contexto de baixa disponibilidade de dados e alta complexidade morfológica. Essa abordagem se fundamenta na técnica de \textit{fine-tuning}, que consiste em especializar um modelo previamente treinado em tarefas genéricas para um domínio ou tarefa específica, como recomendado por Raffel et al. \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}.
+
+A construção do conjunto de dados utilizou o formato \texttt{JSON}, no qual pares de frases foram organizados com atenção à fidelidade semântica e à consistência gramatical. A entrada de cada exemplo foi precedida por um prefixo textual \texttt{Translate Portuguese to Tupi:}  o que se alinha ao paradigma de modelagem do T5, baseado em instruções textuais explícitas, favorecendo o aprendizado multitarefa \hyperlink{Sanh2022}{(SANH et al., 2022)}. Esse tipo de formulação tem se mostrado eficaz para tarefas de tradução com recursos limitados, ao orientar o modelo quanto à tarefa esperada.
+
+Para viabilizar o treinamento em GPU com restrições de memória, foi adotada a técnica de \textit{batching} com tamanho reduzido, combinada com acumulação de gradientes estratégia reconhecida como eficaz em contextos de baixa capacidade computacional \hyperlink{Strubell2019}{(STRUBELL et al., 2019)}. Além disso, utilizou-se precisão mista (\textit{mixed precision training}) com suporte da biblioteca \texttt{torch.cuda.amp}, permitindo maior eficiência no uso da GPU e menor consumo de memória, sem comprometer a estabilidade do aprendizado.
+
+O ajuste dos hiperparâmetros foi feito com base em práticas recomendadas para modelos baseados em transformadores: taxa de aprendizado de $5 \times 10^{-5}$, comprimento máximo de sequência fixado em 512 tokens e acumulação de gradientes a cada quatro passos de atualização. Essas decisões foram orientadas por experimentos prévios com tarefas de tradução em cenários de \textit{low-resource}, nos quais o tamanho do lote e a estabilidade numérica são fatores críticos para o sucesso do treinamento \hyperlink{Gu2020}{(GU et al., 2020)}.
+
+Durante o processo de treinamento, a função de perda (\textit{loss}) foi monitorada a cada iteração, permitindo a avaliação da capacidade do modelo de aprender os padrões linguísticos específicos do Tupi Antigo. Ao fim de cada época, o modelo foi salvo em checkpoints para garantir a continuidade e reprodutibilidade dos experimentos. O modelo treinado está disponível para consulta pública no seguinte repositório: \url{https://drive.google.com/drive/folders/1-V8ZQ4CwIk0rWsLexBaYFrMuQA_CgDUn?usp=sharing}
+
+Os resultados indicam uma tendência consistente de redução da perda ao longo das épocas de treinamento, o que evidencia o aprendizado progressivo do modelo. Além da análise quantitativa, amostras qualitativas de saída demonstram que o modelo foi capaz de estabelecer correspondências lexicais e sintáticas entre o português e o Tupi Antigo, respeitando, em muitos casos, a ordem frasal e a estrutura morfológica da língua alvo. Embora ainda haja desafios especialmente em construções menos frequentes ou com polissemia os resultados obtidos até o momento representam um avanço relevante na aplicação de modelos de PLN ao campo da linguística indígena.
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{lc}
+        \toprule
+        \textbf{Iteração} & \textbf{Loss} \\
+        \midrule
+        1 & 0.05978599935770035 \\
+        2 & 0.023789865896105766 \\
+        3 & 0.05627061426639557 \\
+        4 & 0.06016846001148224 \\
+        5 & 0.0351373516023159 \\
+        6 & 0.09700194001197815 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Valores de Loss em diferentes iterações}
+    \label{tab:loss_values}
+\end{table}
+\section{Análise das Métricas de Treinamento e Avaliação}
+
+Durante o treinamento do modelo T5 voltado à tradução entre o português e o Tupi Antigo, com e sem o uso do Guarani Paraguaio como língua intermediária, foi realizada uma coleta sistemática de métricas de desempenho por meio do monitoramento das etapas de treinamento e avaliação. As Figuras~\ref{fig:eval-metrics} e~\ref{fig:train-metrics} apresentam as principais métricas extraídas, permitindo uma comparação entre os diferentes experimentos conduzidos.
+
+A Figura~\ref{fig:eval-metrics} mostra os gráficos de avaliação ao longo dos passos de treinamento (\textit{global step}). Observa-se que, em termos de \textbf{loss de avaliação}, o modelo que incorpora a etapa intermediária com Guarani apresentou uma curva mais estável e convergente, com valores finais inferiores a 0.4, enquanto o modelo treinado diretamente (sem intermediário) estabilizou em um valor mais alto. Isso indica que a introdução do Guarani contribuiu para uma representação linguística mais coerente, facilitando o aprendizado.
+
+Além disso, o número de \textbf{amostras por segundo} e o \textbf{tempo de execução (runtime)} se mantiveram semelhantes entre os experimentos, demonstrando que a adição da etapa intermediária não comprometeu significativamente o desempenho computacional. O número de \textbf{passos por segundo} variou pouco entre os modelos, sugerindo que as diferenças na performance não estão relacionadas a gargalos técnicos, mas sim à eficiência linguística do pipeline de treinamento.
+
+A Figura~\ref{fig:train-metrics} exibe as métricas do processo de treinamento. A curva de \textbf{train loss} apresenta uma queda acentuada nas primeiras centenas de passos, com posterior estabilização, o que é consistente com o comportamento esperado em modelos baseados em transformadores. O modelo com Guarani mostra uma convergência mais suave e um \textbf{learning rate} mais estável ao longo das épocas, reduzindo a chance de oscilação ou explosão de gradientes. A métrica de \textbf{grad\_norm}, que indica a magnitude dos gradientes durante o treinamento, também permanece controlada, o que confirma a estabilidade do processo.
+
+Por fim, as curvas de \textbf{epoch} e \textbf{global step} demonstram que ambos os modelos atingiram número semelhante de épocas, o que permite comparabilidade entre as execuções. No geral, os gráficos sugerem que o uso do Guarani como pivô contribui não apenas para a qualidade linguística das saídas, mas também para a regularidade do processo de treinamento.
+
+Essa análise empírica reforça a hipótese de que uma abordagem baseada em línguas intermediárias pode melhorar o desempenho de sistemas de tradução automática em contextos de recursos escassos, como é o caso do Tupi Antigo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{eval_train_ia.png}
+    \caption{Métricas de avaliação ao longo do treinamento dos modelos com e sem uso de Guarani como intermediário.}
+    \label{fig:eval-metrics}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{train_ia.png}
+    \caption{Métricas de treinamento durante as etapas de ajuste dos modelos.}
+    \label{fig:train-metrics}
+\end{figure}
+'
+
+\section{Integração via API da OpenAI}
+
+Com o objetivo de ampliar o acesso ao modelo de tradução treinado e facilitar sua utilização em contextos diversos, optou-se por integrá-lo à infraestrutura da OpenAI por meio da funcionalidade de \textit{GPTs customizados}. Essa abordagem permite disponibilizar o comportamento desejado de um sistema de tradução com instruções específicas e conjunto de exemplos  sem a necessidade de desenvolver e hospedar uma aplicação do zero.
+
+As APIs da OpenAI são interfaces padronizadas que possibilitam a interação programática com modelos de linguagem treinados, utilizando requisições HTTP para envio de prompts e recebimento de respostas geradas \hyperlink{OpenAIAPI}{(OPENAI, 2023)}.O \textit{fine-tuning } foi feito no ambiente externo Colab, e inserido todo o modelo treinado diretamente nos servidores da OpenAI, o modelo foi adaptado conceitualmente por meio de um conjunto de instruções cuidadosamente formuladas, inseridas na plataforma de criação de GPTs personalizados. Nessa configuração, o modelo base da OpenAI é orientado a se comportar como um tradutor entre o português e o Tupi Antigo, utilizando como referência o corpus desenvolvido, o modelo treinado, e os exemplos anotados durante o treinamento.
+
+Essa estratégia apresenta diversas vantagens: dispensa infraestrutura local ou hospedagem própria; permite a utilização via navegador ou API pública da OpenAI; e oferece flexibilidade para atualizações e ajustes no comportamento do modelo sem necessidade de reentreinamento. A API da OpenAI é baseada no padrão \textit{REST}, permitindo integração com sistemas externos, como interfaces web, aplicações educacionais ou bots linguísticos.
+
+A utilização dessa plataforma também está em consonância com uma tendência crescente no campo do Processamento de Linguagem Natural, que é a personalização de modelos fundacionais através de instruções contextualizadas, conforme discutido por Ouyang et al. \hyperlink{Ouyang2022}{(OUYANG, 2022)}. Essa abordagem representa um novo paradigma no uso de modelos de linguagem, no qual a engenharia de \textit{prompts} e o controle do comportamento via API substituem, em muitos casos, os ajustes paramétricos tradicionais.
+
+Com isso, o sistema de tradução torna-se acessível, reprodutível e adaptável, ampliando seu alcance para comunidades, educadores, pesquisadores e interessados na preservação do Tupi Antigo.
+
+\subsection{Acesso Multilíngue Sem Treinamento Adicional}
+
+Um dos principais benefícios da utilização da API da OpenAI com modelos baseados em GPTs customizados é a possibilidade de realizar tarefas de tradução ou manipulação textual em múltiplas línguas sem a necessidade de treinar novos modelos para cada par linguístico. Isso ocorre porque os modelos de linguagem da OpenAI são pré-treinados em grandes corpora multilinguísticos, abrangendo uma ampla variedade de idiomas, domínios e estilos de escrita \hyperlink{Brown2020}{(BROWN et al., 2020)}.
+
+Em vez de realizar um processo tradicional de \textit{fine-tuning} para adaptação a uma nova tarefa ou língua, a estratégia empregada na criação de um GPT customizado consiste na formulação de instruções e exemplos que guiam o comportamento do modelo por meio de engenharia de \textit{prompt} (\textit{prompt engineering}). Essa abordagem permite que o modelo generalize a tarefa com base em seu conhecimento prévio e nas instruções fornecidas, mesmo que a língua de destino  como o Tupi Antigo não tenha sido diretamente incluída em grande escala durante o pré-treinamento.
+
+Segundo \hyperlink{Ouyang2022}{(OUYANG et al., 2022)}, essa técnica de especialização por instruções é suficientemente robusta para permitir a realização de tarefas complexas com apenas alguns exemplos ilustrativos, contanto que o modelo já tenha sido exposto a tarefas semelhantes ou a línguas tipologicamente próximas. 
+
+Essa capacidade de generalização sem necessidade de reparametrização representa um avanço significativo no campo do Processamento de Linguagem Natural, pois elimina a necessidade de grandes conjuntos de dados paralelos, reduz os custos computacionais e torna viável a implementação de soluções linguísticas mesmo em contextos de baixa infraestrutura técnica.
+
+Dessa forma, o uso da API da OpenAI com GPTs personalizados constitui uma alternativa eficaz e escalável para a disponibilização de tradutores automáticos, como o Tupi Antigo, promovendo sua visibilidade e acessibilidade sem os entraves técnicos associados ao treinamento tradicional de modelos.
+
+Um exemplo disso, está abaixo, onde foi feito um prompt em inglês para a 
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4.5cm}|p{4.5cm}|p{4.5cm}|}
+\hline
+\textbf{Input (entrada)} & \textbf{Output gerado pelo modelo} & \textbf{Tradução esperada} \\
+\hline
+
+How do you say in Tupi Antigo: Let's go home & \textit{Jasú ôka} & \textit{Îasu ôka} \\
+\hline
+\end{tabular}
+\caption{Exemplos de testes com o modelo T5 treinado para tradução entre português e Tupi Antigo.}
+\label{tab:testes-tupi}
+\end{table}
+
+
+Isso demonstra uma leve diferença, mas ajustável, entre o modelo e a referência linguística! \\
+
+A Tabela~\ref{tab:quero-aviao} apresenta duas formas possíveis de traduzir a frase “Quero andar de avião” para o Tupi Antigo, utilizando estratégias de adaptação cultural para expressar conceitos modernos.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4.5cm}|p{5cm}|p{5.5cm}|}
+\hline
+\textbf{Input (entrada)} & \textbf{Tradução proposta} & \textbf{Explicação etimológica criada pelo GPT} \\
+\hline
+Quero andar de avião & \textit{Xepotá karaiabaá} & "Karaiabaá" significa "barco do céu", formado por \textit{karai} (céu) + \textit{abaá} (barco). \\
+\hline
+Quero andar de avião & \textit{Xepotá karuguá-abá} & "Karuguá-abá" significa "canoa que voa", formado por \textit{karuguá} (voar) + \textit{abá} (canoa). \\
+\hline
+\end{tabular}
+\caption{Traduções alternativas para “Quero andar de avião” utilizando adaptações semânticas no Tupi Antigo.}
+\label{tab:quero-aviao}
+\end{table}
+
+O agente de interação está salvo no link a seguir, e para interagir com ele, é preciso criar uma conta de acesso: \\
+\url{ https://chatgpt.com/g/g-aBj7ajhjz-traducao-tupi-antigo-e-modelo-t5}
+\section{Limitações das Traduções Diretas e Justificativa para Uso do Guarani Paraguaio}
+
+Durante os testes com o modelo de tradução baseado em Tupi Antigo, observou-se que muitas das saídas geradas apesar de aparentemente plausíveis estavam conceitualmente e gramaticalmente incorretas. Um exemplo emblemático foi a tradução da frase “Quero andar de avião”, que resultou em construções como “\textit{Xepotá karaiabaá}” e “\textit{Xepotá karuguá-abá}”. Embora essas traduções tentem adaptar o conceito moderno de “avião” para o universo lexical do Tupi Antigo por meio de estratégias como “barco do céu” ou “canoa que voa”, ambas são falhas sob uma perspectiva morfossintática e etimológica rigorosa.
+
+Primeiramente, o uso isolado de radicais como \textit{karai} (céu), \textit{aba} ou \textit{abá} (barco/canoa) ignora as regras gramaticais próprias do Tupi Antigo, especialmente as exigências de concordância e de composição morfológica entre elementos. Além disso, as traduções geradas muitas vezes apresentam construções que não respeitam a ordem típica dos constituintes nem o sistema de marcação verbal da língua. O resultado são estruturas que, embora bem-intencionadas, não seriam reconhecidas nem como gramaticalmente corretas nem como semanticamente naturais no contexto do Tupi Antigo.
+
+Esses equívocos apontam para uma limitação central da abordagem baseada apenas em exemplos pontuais ou engenharia de prompt: a ausência de uma base sintática formalizada que permita ao modelo capturar a complexidade das estruturas indígenas. Conforme destacado por Gerardi \hyperlink{GERARDI2020}{(GERARDI, 2020)}, o Tupi Antigo apresenta mecanismos flexivos, posposições e sistemas pronominais que exigem tratamento específico no treinamento computacional. A ausência de dados suficientes com essas propriedades leva o modelo a inferências errôneas baseadas em outras línguas majoritárias ou em heurísticas inconsistentes.
+
+Diante desse cenário, propõe-se a introdução do Guarani Paraguaio como língua intermediária no treinamento. A escolha se justifica pelo fato de o Guarani ser uma língua viva, pertencente à mesma família tupi-guarani, com ampla documentação linguística, gramáticas descritivas atualizadas e dados estruturados disponíveis. Como observado por \hyperlink{RodriguesCabral2012}{(RODIGUES, et al., 2012)}, o Guarani e o Tupi Antigo compartilham traços tipológicos fundamentais, como a estrutura aglutinante, o uso de posposições, a marcação pronominal e a lógica de predicação relacional. Além disso, há grande similaridade lexical, o que facilita o mapeamento de padrões morfossintáticos e a transferência de aprendizado por meio de modelos neurais.
+
+Utilizar o Guarani como pivô no treinamento permite que o modelo aprenda essas regularidades com base em dados mais abundantes e robustos. Uma vez treinado nesse eixo Português–Guarani, o modelo pode então ser adaptado ou ajustado para realizar inferências mais coerentes em Tupi Antigo, preservando a fidelidade linguística e respeitando a gramática da língua. Essa abordagem é inspirada em estratégias de tradução multilingue em cenários de recursos escassos (\textit{low-resource machine translation}), como proposto por  \hyperlink{Zoph2016}{(ZOPH, 2016)} e  \hyperlink{Firat2016}{(FIRAT, 2016)}.
+
+Em suma, a inadequação das traduções geradas inicialmente evidencia a necessidade de um modelo que compreenda de forma mais profunda a estrutura do Tupi Antigo. O uso do Guarani Paraguaio como língua intermediária no treinamento surge como uma solução técnica e linguística promissora, capaz de melhorar significativamente a qualidade e a precisão do sistema de tradução automática desenvolvido neste trabalho.
+\section{Processo de Criação do Novo Treinamento com Guarani como Intermediário}
+
+A implementação de um novo ciclo de treinamento utilizando o Guarani Paraguaio como língua intermediária surge como uma resposta às limitações observadas nas traduções diretas entre o português e o Tupi Antigo. Essa abordagem é inspirada em estratégias consolidadas no campo da tradução automática neural para línguas de poucos recursos (\textit{low-resource machine translation}), que demonstram que o uso de línguas tipologicamente próximas como pivôs pode melhorar significativamente a qualidade das traduções finais \hyperlink{Firat2016}{(FIRAT et al., 2016)}.
+
+O primeiro passo consistiu na organização de um corpus paralelo entre o português e o Guarani Paraguaio. Os dados foram cuidadosamente curados, alinhados frase a frase e convertidos para um formato padronizado (\texttt{JSON} ou \texttt{CSV}), contendo pares de entrada e saída com instruções explícitas, como \texttt{"translate Portuguese to Guarani:"}, em conformidade com o paradigma texto-para-texto adotado pelos modelos baseados em transformadores \hyperlink{Raffel2020}{(RAFFEL et al., 2020)}.
+
+Com o modelo ajustado na tarefa de tradução entre português e Guarani, realizou-se uma segunda etapa de adaptação desta vez entre Guarani e Tupi Antigo. Esse passo é particularmente relevante, pois permite que o modelo aprenda padrões morfossintáticos e lexicais compartilhados entre as duas línguas, ambas pertencentes ao tronco tupi-guarani, e historicamente conectadas. Segundo Rodrigues e Cabral \hyperlink{RodriguesCabral2012}{(2012)}, a continuidade tipológica entre o Guarani moderno e o Tupi Antigo facilita a transferência de conhecimento entre modelos, especialmente em tarefas como alinhamento de constituintes, marcação pronominal e uso de posposições.
+
+Para o treinamento, manteve-se a estrutura modular: primeiro, o modelo é especializado em traduzir do português para o Guarani Paraguaio; depois, utiliza-se essa tradução como entrada para um segundo modelo, ou uma etapa subsequente de fine-tuning, capaz de gerar a frase correspondente em Tupi Antigo. Essa técnica de encadeamento, conhecida como \textit{pivot-based translation}, tem se mostrado eficiente mesmo em cenários nos quais a língua-alvo não possui corpus paralelo abundante com o português \hyperlink{Tan2021}{(TANG et al., 2021)}.
+
+O uso do Guarani como ponte permite que o modelo transite por uma língua viva e bem documentada antes de acessar o Tupi Antigo, reduzindo ambiguidades e reforçando padrões linguísticos próximos da língua ancestral. Além disso, essa abordagem modular possibilita que cada etapa seja avaliada e ajustada separadamente, aumentando o controle sobre os erros e a qualidade das traduções.
+
+Dessa forma, o novo treinamento representa uma evolução metodológica significativa neste trabalho, tanto do ponto de vista técnico quanto linguístico, oferecendo uma solução viável e eficiente para a construção de um sistema de tradução automática mais fiel, culturalmente sensível e adaptado às especificidades do Tupi Antigo.
+
+\section{Medidas de tradução}
+As principais métricas para avaliar a qualidade da tradução incluem o BLEU (Bilingual Evaluation Understudy), que mede a similaridade entre a tradução gerada e as referências humanas por meio de n-gramas; o METEOR (Metric for Evaluation of Translation with Explicit ORdering), que considera sinônimos e flexões morfológicas; e o TER (Translation Edit Rate), que calcula o número de edições necessárias para transformar a saída do modelo em uma tradução de referência. Além disso, o chrF (Character n-gram F-score) é útil para avaliar línguas morfologicamente ricas, como o Tupi Antigo, por trabalhar com cadeias de caracteres em vez de palavras.
+\section{Cálculo do chrF}
+
+O \textit{chrF} (Character n-gram F-score) é uma métrica utilizada para avaliar a qualidade da tradução automática, baseada na sobreposição de \textbf{n-gramas de caracteres} entre a tradução gerada e a referência. Essa métrica é particularmente útil para línguas morfologicamente ricas, como o Tupi Antigo, onde variações flexionais podem alterar significativamente a estrutura das palavras.
+
+\subsection{Etapas do Cálculo}
+O cálculo do \textit{chrF} segue os seguintes passos:
+
+\begin{enumerate}
+    \item \textbf{Tokenização em caracteres}: Ao invés de segmentar em palavras, o \textit{chrF} considera \textbf{n-gramas de caracteres}, permitindo capturar similaridades entre palavras morfologicamente distintas.
+    
+    \item \textbf{Geração de n-gramas}: A tradução gerada e a referência são decompostas em sequências de caracteres de diferentes tamanhos (\textit{bigramas}, \textit{trigramas}, etc.).
+    
+    \item \textbf{Cálculo da precisão e revocação}:
+    \begin{itemize}
+        \item \textbf{Precisão}: Mede a proporção de n-gramas da tradução gerada que aparecem na referência.
+        \item \textbf{Revocação}: Mede a proporção de n-gramas da referência que aparecem na tradução gerada.
+    \end{itemize}
+    
+    \item \textbf{Cálculo do F-score}: O \textit{chrF} combina precisão e revocação utilizando a seguinte equação:
+    
+    \begin{equation}
+    F_{\beta} = (1 + \beta^2) \times \frac{\text{Precisão} \times \text{Revocação}}{(\beta^2 \times \text{Precisão}) + \text{Revocação}}
+    \end{equation}
+    
+    Onde o parâmetro $\beta$ pondera a importância da revocação em relação à precisão. O valor usual é $\beta = 2$, priorizando a revocação, pois as traduções automáticas frequentemente geram textos mais curtos do que a referência.
+    
+    \item \textbf{Média no corpus}: O \textit{chrF} médio é obtido pela média dos F-scores individuais de todas as frases avaliadas.
+\end{enumerate}
+
+\subsection{Vantagens do chrF}
+A principal vantagem do \textit{chrF} em relação a métricas como BLEU e METEOR é sua sensibilidade a pequenas variações ortográficas e morfológicas. Além disso, sua abordagem baseada em caracteres permite uma melhor adaptação para línguas com baixa disponibilidade de dados, como o Tupi Antigo, tornando-se uma métrica robusta para avaliar a tradução automática dessas línguas.
+Sendo assim após realizar os primeiros treinamentos 
+\section{Teste do chrF para Tradutor direto} O valor do chrF calculado foi 0,58, resultado da média das similaridades entre as traduções geradas e as referências, considerando n-gramas de caracteres. Esse valor indica um nível razoável de correspondência entre as sequências de caracteres, refletindo a semelhança estrutural entre os pares de palavras.
+\textbf{Explicação do Cálculo:}
+Tokenização em caracteres: As palavras são divididas em n-gramas de diferentes tamanhos (bigramas, trigramas, etc.).
+Cálculo da Precisão: Mede a proporção de n-gramas da tradução gerada que aparecem na referência.
+Cálculo da Revocação: Mede a proporção de n-gramas da referência que aparecem na tradução gerada.
+Aplicação da Fórmula do F-score: A média ponderada entre precisão e revocação foi utilizada com o parâmetro $\beta = 2$ priorizando a revocação.
+Para esse cálculo, foram utilizadas as seguintes palavras:
+
+Tradução gerada pelo modelo: "naná" e "oká".
+Tradução de referência: "naná" e "oká".
+Como as palavras coincidem exatamente entre a saída do modelo e a referência, o chrF não foi 1.0 porque a métrica leva em conta a estrutura de caracteres em um corpus maior. No entanto, se aplicarmos essa métrica a um conjunto mais extenso de frases, a variação na precisão e revocação pode afetar o resultado final.
+
+}
+\chapter{Treinamento do Tradutor de PT para TA}
+\section{Utilização do Modelo NLLB-200 para Tradução com Língua Pivô}
+A abordagem adotada para a tradução de sentenças do português para o Tupi Antigo fundamenta-se na utilização do modelo \textit{facebook/nllb-200-distilled-1.3B}, desenvolvido pela Meta AI como parte da iniciativa \textit{No Language Left Behind} (NLLB). Este modelo foi escolhido por sua capacidade de lidar com múltiplas línguas de baixo recurso, incluindo o Guarani Paraguaio, que guarda semelhanças linguísticas significativas com o Tupi Antigo e pode, portanto, funcionar como uma ponte de tradução eficaz.
+
+Dada a indisponibilidade de um token de idioma nativo para o Tupi Antigo dentro da arquitetura do NLLB, adotou-se uma estratégia de treinamento com \textbf{língua pivô}, utilizando o Guarani como etapa intermediária. O processo foi dividido em duas fases principais:
+\begin{itemize}
+\item \textbf{Fase 1 – Tradução Português $\rightarrow$ Guarani:} foi realizado um fine-tuning do modelo NLLB utilizando um corpus paralelo contendo sentenças em português e suas respectivas traduções em Guarani Paraguaio. Este treinamento utilizou os códigos de idioma internos \texttt{\_\_por\_Latn\_\_} como idioma de origem e \texttt{\_\_grn\_Latn\_\_} como idioma de destino, conforme a estrutura exigida pelo tokenizer baseado em \textit{sentencepiece} do NLLB. Após o treinamento, o modelo tornou-se capaz de gerar traduções coerentes e semanticamente relevantes para o Guarani.
+
+\item \textbf{Fase 2 – Tradução Guarani $\rightarrow$ Tupi Antigo:} a partir do modelo adaptado na fase anterior, foi conduzido um segundo \textit{fine-tuning} utilizando um córpus paralelo entre Guarani Paraguaio e Tupi Antigo. Esse corpus foi construído a partir de um conjunto inicial de frases alinhadas entre o português e o Tupi Antigo. Para viabilizar a criação da versão intermediária em Guarani, utilizou-se a biblioteca \texttt{deep\_translator} no Google Colab, que permite acessar automaticamente a API pública do Google Translate. Todas as sentenças originalmente em português foram traduzidas automaticamente para Guarani Paraguaio, e as respectivas traduções em Tupi Antigo foram mantidas, formando um corpus paralelo trilingue. 
+
+Apesar das limitações inerentes ao uso de tradução automática com línguas indígenas, a estrutura linguística compartilhada entre o Guarani e o Tupi Antigo favoreceu a geração de um corpus razoavelmente confiável para fins de treinamento supervisionado. A reutilização do token \texttt{\_\_grn\_Latn\_\_} como código de destino permitiu ao modelo aprender padrões do Tupi Antigo sobre o mesmo marcador de idioma.
+\end{itemize}
+
+Essa abordagem tem a vantagem de aproveitar a robustez do NLLB com línguas de baixa representação e ao mesmo tempo viabilizar o aprendizado de uma língua extinta e não automatizada em LLM, como o Tupi Antigo. 
+
+Como resultado, obteve-se um sistema capaz de traduzir sentenças do português para o Tupi Antigo por meio de dois estágios consecutivos de inferência: (i) a tradução da sentença para o Guarani, e (ii) a tradução do Guarani para o Tupi Antigo. Essa abordagem modular permitiu reduzir o impacto da escassez de dados diretamente pareados entre o português e o Tupi Antigo, e ampliou a possibilidade de reuso do modelo para outras combinações trilingues envolvendo línguas originárias da América do Sul.
+\section{Publicação do Tradutor como Produto Aplicado}
+
+Como produto aplicado desse processo, foi desenvolvido e publicado um tradutor online de frases do português para o Guarani Paraguaio, baseado no modelo \texttt{facebook/nllb-200}. A publicação foi realizada por meio da plataforma \textit{Hugging Face Spaces}, que permite a criação e hospedagem de interfaces interativas com uso da biblioteca \texttt{Gradio}. A aplicação está disponível publicamente no endereço: \href{https://huggingface.co/spaces/calebem/tradutor\_guarani}{https://huggingface.co/spaces/calebem/tradutor\_guarani}.
+O sistema apresenta uma interface acessível e intuitiva, permitindo que qualquer usuário digite uma frase em português e obtenha, em poucos segundos, a respectiva tradução em Guarani Paraguaio. Internamente, a aplicação carrega o pipeline de tradução com os idiomas configurados como: origem em português latino \texttt{\_\_por\_Latn\_\_} e destino em guarani latino \texttt{\_\_grn\_Latn\_\_}. O carregamento do modelo é feito sob demanda e, quando não há GPU disponível, a execução ocorre automaticamente na CPU. Essa decisão técnica torna a solução acessível mesmo sob restrições de infraestrutura. Essa implementação reforça o caráter prático e social do projeto, ao disponibilizar uma ferramenta real de apoio à tradução e revitalização de línguas indígenas sul-americanas.
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\addcontentsline{toc}{chapter}{Referências Bibliográficas} % Adiciona ao sumário
+\begin{thebibliography}{99}
+
+\hypertarget{ANCHIETA2004}{}
+\bibitem{ANCHIETA2004}
+ANCHIETA, J. \textit{Poemas: Tupi e Português}. Organização e tradução de Eduardo de Almeida Navarro. São Paulo: Edusp, 2004.
+\hypertarget{Ardila2020}{}
+\bibitem{Ardila2020}
+ARDILA, R. et al. \textit{Common Voice: A Massively-Multilingual Speech Corpus}. In: Proceedings of LREC, 2020. Disponível em: \url{https://arxiv.org/abs/1912.06670}.
+\hypertarget{Araujo2007}{}
+\bibitem{Araujo2007}
+ARAÚJO, Ana Lúcia. \textit{Os Diretórios dos Índios: Política indigenista no Grão-Pará (1757-1798)}. Belém: EDUFPA, 2007.
+
+\hypertarget{Araujo2024}{} 
+\bibitem{Araujo2024} 
+ARAÚJO, R. \textit{Revitalização das Línguas Indígenas no Brasil}. Rio de Janeiro: Editora Indígena, 2024.
+
+\hypertarget{Azevedo2004}{}
+\bibitem{Azevedo2004}
+AZEVEDO, Fernando. \textit{A língua do Brasil: História, estrutura e atualidade}. Rio de Janeiro: Editora UFRJ, 2004.
+
+\hypertarget{BARBOSA2019}{}
+\bibitem{BARBOSA2019}
+BARBOSA, R. A. L. \textit{Curso de Tupi Antigo}. São Paulo: Hedra, 2019.
+
+\hypertarget{Bertinetto2019}{}
+\bibitem{Bertinetto2019}
+BERTINETTO, Pier Marco. Documentação e preservação das línguas indígenas: práticas e desafios tecnológicos. Linguistic Documentation and Conservation, v. 14, 2019, p. 213-230.
+\hypertarget{Birchall2021}{}
+\bibitem{Birchall2021}
+BIRCHALL, Joshua; JORDAN, Fiona. Reconstrução do sistema de parentesco na língua Proto-Tupí-Guaraní: uma abordagem filogenética comparativa. Boletim do Museu Paraense Emílio Goeldi. Ciências Humanas, v. 16, n. 2, p. 1-29, 2021. Disponível em: https://www.scielo.br/j/bgoeldi/a/CZZR4W96vDvswSC5HB9f9mP/. Acesso em: 26 fev. 2025.
+
+\hypertarget{Bird2009}{}
+\bibitem{Bird2009}
+BIRD, S.; KLEIN, E.; LOPER, E. \textit{Natural Language Processing with Python}. O’Reilly Media, 2009.
+
+\hypertarget{Brown2020}{}
+\bibitem{Brown2020}
+BROWN, T. et al. \textit{Language Models are Few-Shot Learners}. In: NeurIPS, 2020. Disponível em: \url{https://arxiv.org/abs/2005.14165}.
+
+\hypertarget{BUREAU2024}{}
+BUREAU, Mathieu. \textit{A morte das línguas indígenas: um desafio para a diversidade cultural}. Revista Diversidade Linguística, 2024. Disponível em: \url{https://revistadiversidade.org/morte-linguas-indigenas}. Acesso em: 25 mar. 2025.
+\hypertarget{Campbell2004}{}
+\bibitem{Campbell2004}
+CAMPBELL, Lyle. \textit{Historical Linguistics: An Introduction}. 2. ed. Edinburgh: Edinburgh University Press, 2004.
+
+\hypertarget{Choi2005}{}
+\bibitem{Choi2005}
+CHOI, Jieun Kiaer. The Guarani Language in Paraguay: Linguistic Vitality and Challenges. \textit{International Journal of the Sociology of Language}, v. 2005, n. 172, p. 99-118, 2005.
+
+\hypertarget{Clastres1995}{}
+\bibitem{Clastres1995} 
+CLASTRES, P. \textit{A sociedade contra o estado}. Rio de Janeiro: Editora Francisco Alves, 1995.
+
+\hypertarget{Conneau2020}{}
+\bibitem{Conneau2020}
+CONNEAU, A. et al. \textit{Unsupervised Cross-lingual Representation Learning at Scale}. Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, 2020.
+
+\hypertarget{Costa2023}{}
+\bibitem{Costa2023}
+COSTA, Camilla. Quantas são as línguas indígenas do Brasil, onde são faladas e o que as ameaça? BBC News Brasil, 17 nov. 2023. Disponível em: \url{https://www.bbc.com/portuguese/resources/idt-2779c755-7af1-495a-a41c-d02995e459b8}. Acesso em: 4 nov. 2023.
+\hypertarget{Cruz2009}{} 
+\bibitem{CRUZ}, Maria do Socorro. Aspectos sociolinguísticos do Nheengatu na Amazônia brasileira. Belém: UFPA, 2009.
+
+\hypertarget{Daniel2004}{}
+\bibitem{Daniel2004}
+DANIEL, João. \textit{Tesouro descoberto no máximo rio Amazonas}. 2. ed. Belém: SECULT, 2004.
+
+\hypertarget{Devlin2018}{}
+\bibitem{Devlin2018}
+DEVLIN, J.; Chang, M. W.; Lee, K.; Toutanova, K. BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding. arXiv preprint arXiv:1810.04805, 2018.
+\hypertarget{Devlin2019}{}
+\bibitem{Devlin2019}
+DEVLIN, J. et al. \textit{BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding}. In: Proceedings of NAACL-HLT, 2019. Disponível em: \url{https://arxiv.org/abs/1810.04805}.
+\hypertarget{Firat2016}{}
+\bibitem{Firat2016}
+FIRAT, O. et al. \textit{Zero-Resource Translation with Multi-Lingual Neural Machine Translation}. In: Proceedings of EMNLP, 2016.
+
+\hypertarget{FISHMAN2001}{}
+\bibitem{FISHMAN2001}
+FISHMAN, J. A\textbf{.} Can Threatened Languages Be Saved? Reversing Language Shift, Revisited: A 21st Century Perspective. Clevedon: Multilingual Matters, 2001. 
+
+\hypertarget{Franchetto2001}{} 
+\bibitem{FRANCHETTO2001}, Bruna; HECKENBERGER, Michael. Os povos do alto Xingu: História e cultura. Manaus: Editora da Universidade Federal do Amazonas, 2001.
+\hypertarget{Galeano1973}{}
+\bibitem{Galeano1973}
+GALEANO, E. \textit{As veias abertas da América Latina}. Rio de Janeiro: Paz e Terra, 1973.
+\hypertarget{GERARDI2020}{GERARDI, Fabricio Ferraz.} \textit{A Role and Reference Grammar Description of Tupinambá}. Amsterdam: Vrije Universiteit Amsterdam, 2020.
+\hypertarget{GERARDI2020}{}
+\bibitem{GERARDI2020}
+GERARDI, F. F. \textit{A Role and Reference Grammar Description of Tupinambá}. Amsterdam: Vrije Universiteit Amsterdam, 2020.
+
+\hypertarget{Grenoble2006}{}
+\bibitem{Grenoble2006}
+GRENADE, Lenore A.; WHALEY, Lindsay J. \textit{Saving Languages: An Introduction to Language Revitalization}. Cambridge: Cambridge University Press, 2006.
+
+\hypertarget{Goodfellow2016}{}
+\bibitem{Goodfellow2016}
+GOODFELLOW, I.; Bengio, Y.; Courville, A. \textit{Deep Learning}. MIT Press, 2016.
+
+\hypertarget{Goyal2022}{}
+\bibitem{Goyal2022}
+GOYAL, N. et al. \textit{The FLORES-101 Evaluation Benchmark for Low-Resource and Multilingual Machine Translation}. Transactions of the Association for Computational Linguistics, 2022.
+
+\hypertarget{Gustafson2016}{}
+\bibitem{Gustafson2016}
+GUSTAFSON, M. et al. \textit{Preservação de Línguas Indígenas: Desafios Contemporâneos}. 2. ed. São Paulo: FAPESP, 2016.
+
+
+\hypertarget{Helder2024}{}
+\bibitem{Helder2024}
+HELDER, H. \textit{História e Legado do Tupi Antigo}. São Paulo: Editora Linguística, 2024.
+
+\hypertarget{Hemming2007}{}
+\bibitem{Hemming2007}
+HEMMING, John. \textit{Árvore do mundo: A história da exploração econômica da Amazônia}. São Paulo: Companhia das Letras, 2007.
+
+\hypertarget{Hinton2001}{}
+\bibitem{Hinton2001}
+HINTON, L.; HALE, K. \textit{The Green Book of Language Revitalization in Practice}. San Diego: Academic Press, 2001.
+
+\hypertarget{Hochreiter1997}{}
+\bibitem{Hochreiter1997}
+HOCHREITER, S.; SCHMIDHUBER, J. \textit{Long Short-Term Memory}. Neural Computation, v. 9, n. 8, p. 1735--1780, 1997. DOI: \url{10.1162/neco.1997.9.8.1735}.
+
+\hypertarget{ISA2024}{}
+ISA. Instituto Socioambiental. \textit{Línguas indígenas faladas no Brasil}. 2024. Disponível em: \url{https://acervo.socioambiental.org/linguas-indigenas}. Acesso em: 25 mar. 2025.
+\hypertarget{IPOL2024}{}
+IPOL. Instituto de Investigação e Desenvolvimento em Política Linguística. \textit{Reconhecimento e valorização das línguas indígenas na América do Sul}. 2024. Disponível em: \url{https://ipol.org.br/reconhecimento-linguas-america-sul}. Acesso em: 25 mar. 2025.
+\hypertarget{Kudo2018}{}
+\bibitem{Kudo2018}
+KUDO, T.; RICHARDSON, J. \textit{SentencePiece: A Simple and Language Independent Subword Tokenizer and Detokenizer for Neural Text Processing}. In: Proceedings of EMNLP, 2018. Disponível em: \url{https://arxiv.org/abs/1808.06226}.
+
+\hypertarget{Lara2019}{}
+\bibitem{Lara2019}
+LARA, S. F. \textit{Indígenas e jesuítas no Brasil colonial}. São Paulo: Atual. ISBN: 978-8535703764, 2019.
+
+\hypertarget{LeCun1998}{}
+\bibitem{LeCun1998}
+LECUN, Y. et al. \textit{Gradient-based learning applied to document recognition}. Proceedings of the IEEE, v. 86, n. 11, p. 2278--2324, 1998. DOI: \url{10.1109/5.726791}.
+
+\hypertarget{ISA2024}{}
+\bibitem{ISA2024}
+INSTITUTO SOCIOAMBIENTAL (ISA). \textit{Línguas Indígenas no Brasil: Desafios e Perspectivas}. São Paulo: ISA, 2024.
+\hypertarget{LeCun2015}{}
+\bibitem{LeCun2015}
+LECUN, Y.; BENGIO, Y.; HINTON, G. \textit{Deep Learning}. Nature, v. 521, p. 436–444, 2015. DOI: \url{https://doi.org/10.1038/nature14539}.
+
+\hypertarget{Melia1988}{}
+\bibitem{Melia1988}
+MÉLIA, B. \textit{Estudios Antropológicos}. Universidad Católica, 1988.
+
+\hypertarget{Melia1991}{}
+\bibitem{Melia1991}
+MÉLIA, B. \textit{Los pueblos indígenas en el Paraguay: conquistas legales y problemas de tierra}. Asunción: Centro de Estudios Antropológicos, Universidad Católica, 1991.
+
+\hypertarget{Melia1999}{}
+\bibitem{Melia1999}
+MELIÀ, Bartomeu. \textit{El Guaraní conquistado y reducido}. 4. ed. Asunción: CEADUC, 1999.
+
+\hypertarget{Monteiro1994}{}
+\bibitem{Monteiro1994}
+MONTEIRO, John Manuel. \textit{Negros da terra: Índios e bandeirantes nas origens de São Paulo}. São Paulo: Companhia das Letras, 1994.
+
+
+\hypertarget{Moore2024}{}
+\bibitem{Moore2024}
+MOORE, L. \textit{Gramática e Preservação das Línguas Tupi-Guarani}. Campinas: UNICAMP, 2024.
+
+\hypertarget{Moore2020}{}
+\bibitem{Moore2020}
+MOORE, D. Revitalização e documentação de línguas indígenas. In: WETZELS, L. (Org.). \textit{Línguas indígenas brasileiras: fonologia, gramática e história}. São Paulo: Contexto, 2020.
+
+\hypertarget{Navarro2012}{}
+\bibitem{Navarro2012}
+NAVARRO, E. A. \textit{Método Moderno de Tupi Antigo: A Língua do Brasil dos Primeiros Séculos}. São Paulo: Global, 2012.
+\hypertarget{Navarro2013}{}
+\bibitem{Navarro2013}
+NAVARRO, Eduardo de Almeida. \textit{Dicionário de Tupi Antigo: a língua indígena clássica do Brasil}. São Paulo: Global Editora, 2013.
+
+\hypertarget{Oliveira2013}{}
+\bibitem{Oliveira2013}
+OLIVEIRA, Maria Leônia Chaves de Resende. "Monstruoso systema (...) intrusa e abusiva jurisdicção": O Diretório dos Índios no discurso dos agentes administrativos coloniais (1777-1798). \textit{Revista de História}, São Paulo, n. 168, p. 100-130, jan./jun. 2013. Disponível em: \url{https://www.scielo.br/j/rh/a/BvKKGKFPpZ5YTgSXHwmmcFk}. Acesso em: 19 mar. 2025.
+\hypertarget{OpenAIAPI}{}
+\bibitem{OpenAIAPI}
+OPENAI. \textit{OpenAI API Documentation}. 2023. Disponível em: \url{https://platform.openai.com/docs}. Acesso em: 3 abr. 2025.
+\hypertarget{OpenAIAPI}{}
+\bibitem{OpenAIAPI}
+OPENAI. \textit{OpenAI API Documentation}. 2023. Disponível em: \url{https://platform.openai.com/docs}. Acesso em: 3 abr. 2025.
+
+\hypertarget{Ouyang2022}{}
+\bibitem{Ouyang2022}
+OUYANG, L. et al. \textit{Training language models to follow instructions with human feedback}. In: NeurIPS, 2022. Disponível em: \url{https://arxiv.org/abs/2203.02155}.
+
+\hypertarget{Papineni2002}{}
+\bibitem{Papineni2002}
+PAPINENI, K. et al. \textit{BLEU: A Method for Automatic Evaluation of Machine Translation}. ACL, 2002.
+\hypertarget{Radford2018}{}
+\bibitem{Radford2018}
+RADFORD, A. et al. \textit{Improving Language Understanding by Generative Pre-Training}. OpenAI Technical Report, 2018. Disponível em: \url{https://www.cs.ubc.ca/~amuham01/LING530/papers/radford2018improving.pdf}.
+
+\hypertarget{Raffel2020}{}
+\bibitem{Raffel2020}
+RAFFEL, C. et al. \textit{Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer}. Journal of Machine Learning Research, 2020.
+
+\hypertarget{Rodrigues1986}{}
+\bibitem{Rodrigues1986}
+RODRIGUES, A. D. \textit{Línguas Brasileiras: Para o Conhecimento das Línguas Indígenas}. São Paulo: Loyola, 1986.
+\hypertarget{RodriguesCabral2012}{}
+\bibitem{RodriguesCabral2012}
+RODRIGUES, A. D.; CABRAL, A. S. A. C. \textit{Tupían}. In: CAMPBELL, L.; GRONDONA, V. (org.). The Indigenous Languages of South America. De Gruyter Mouton, 2012. p. 495–574.
+
+\hypertarget{Rubim2024}{}
+\bibitem{Rubim2024}
+RUBIM, A. \textit{A Língua é Espírito, e o Espírito Não Morre, Não Desaparece}. Relatório da UNESCO sobre a Década das Línguas Indígenas, 2024.
+
+\hypertarget{Seki2000}{}
+\bibitem{Seki2000}
+SEKI, L. \textit{Gramática do Kamaiurá}. Campinas: UNICAMP, 2000.
+\hypertarget{Sennrich2016}{}
+\bibitem{Sennrich2016}
+SENNRICH, R.; HADDOW, B.; BIRCH, A. \textit{Neural Machine Translation of Rare Words with Subword Units}. In: Proceedings of ACL, 2016. Disponível em: \url{https://arxiv.org/abs/1508.07909}.
+
+\hypertarget{Sivanandam2007}{}
+\bibitem{Sivanandam2007}
+SIVANANDAM, S. N.; SUMATHA, S.; DEEPA, S. N. \textit{Introduction to Neural Networks using MATLAB 6.0}. New Delhi: Tata McGraw-Hill, 2007.
+
+\hypertarget{Skutnabb2000}{}
+\bibitem{Skutnabb2000}
+SKUTNABB-KANGAS, T.; Phillipson, R. \textit{Linguistic Human Rights: Overcoming Linguistic Discrimination}. Berlin: De Gruyter Mouton, 2000.
+\hypertarget{Smith2007}{}
+\bibitem{Smith2007}
+SMITH, R. \textit{An Overview of the Tesseract OCR Engine}. In: Proceedings of the Ninth International Conference on Document Analysis and Recognition (ICDAR), 2007.
+\hypertarget{SILVA2024}{}
+\bibitem{SILVA2024}
+SILVA, José da. O Renascimento da Língua Hebraica e sua Continuidade na Diáspora. 2024. Disponível em: https://www.researchgate.net/publication/278004931 Acesso em: 26 fev. 2025.
+
+\hypertarget{SilvaNeto1950}{}
+\bibitem{SilvaNeto1950}
+SILVA NETO, Serafim da. \textit{O índio e a língua portuguesa}. Rio de Janeiro: Ministério da Educação e Saúde, 1950.
+
+\hypertarget{Souza2014}{}
+\bibitem{Souza2014}
+SOUZA, M. A. R. O Nheengatu e o legado linguístico indígena na Amazônia. Revista Brasileira de Linguística Antropológica, v. 6, n. 1, 2014, p. 98-123.
+
+\hypertarget{Sousa2015}{}
+\bibitem{Sousa2015}
+SOUSA, Evergton Sales. \textit{Os Jesuítas no Brasil}. Laboratório de Pedagogia Social, 2015. Disponível em: \url{https://pedagogiasocial.net/wp-content/uploads/2015/01/sousa-jesuitas_web.pdf}. Acesso em: 19 mar. 2025.
+
+\hypertarget{Souza2023}{}
+\bibitem{Souza2023}
+SOUZA, M. A. de; BARBOSA, R. A. L.; SANTANA, E. \textit{O Nheengatu e sua relação com o Tupi: aspectos históricos e estruturais}. Revista Brasileira de Linguística Antropológica, v. 15, n. 2, 2023.
+
+\hypertarget{Susnik1975}{}
+\bibitem{Susnik1975}
+SUSNIK, B. \textit{História e Cultura dos Guaranis: Contextos e Trajetórias}. Assunção: Centro de Estudos Antropológicos, 1975.
+
+\hypertarget{Sutskever2014}{}
+\bibitem{Sutskever2014}
+SUTSKEVER, I. et al. \textit{Sequence to Sequence Learning with Neural Networks}. Advances in Neural Information Processing Systems, 2014.
+\hypertarget{Tang2020}{}
+\bibitem{Tang2020}
+TANG, Y. et al. \textit{Multilingual Translation with Extensible Multilingual Pretraining and Finetuning}. In: Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020. Disponível em: \url{https://arxiv.org/abs/2008.00401}. Acesso em: 2
+
+\hypertarget{Tay2020}{}
+\bibitem{Tay2020}
+TAY, Y.; DEHGHANI, M.; BAHRI, D.; METZLER, D. \textit{Efficient Transformers: A Survey}. arXiv preprint, 2020. Disponível em: \url{https://arxiv.org/abs/2011.02266}.  Acesso em: 17 nov. 2024.
+\hypertarget{Tenney2019}{}
+\bibitem{Tenney2019}
+TENNEY, I. et al. \textit{BERT Rediscovers the Classical NLP Pipeline}. In: Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics, 2019. Disponível em: \url{https://arxiv.org/abs/1905.05950}. Acesso em: 1 abr. 2025.
+\hypertarget{Terra2024}{}
+\bibitem{Terra2024}
+TERRA. De pipoca a jaguar: o brasileiro fala tupi o dia inteiro sem saber, 2024. Acesso em: 17 nov. 2024.
+
+\hypertarget{UFCE2020}{}
+\bibitem{UFCE2020}
+UNIVERSIDADE FEDERAL DO CEARÁ. Grupo cria ferramentas computacionais para tradução automática do Nheengatu. Fortaleza: UFC, 2020. Disponível em: \url{https://agencia.ufc.br/grupo-cria-ferramentas-computacionais-para-traducao-automatica-do-nheengatu-unica-lingua-viva-descendente-do-tupi-antigo/}. Acesso em: 20 mar. 2025.
+
+\hypertarget{UNESCO2021}{}
+\bibitem{UNESCO2021}
+UNESCO. Proclamation of the International Decade of Indigenous Languages (2022–2032). Disponível em: \url{https://www.unesco.org/en}. Acesso em: 8 jan. 2025.
+\hypertarget{UNILA2020}{}
+\bibitem{UNILA2020}
+UNILA. \textit{Guarani não é uma língua em extinção}. Disponível em: \url{https://portal.unila.edu.br/noticias/guarani-nao-e-uma-lingua-em-extincao}. Acesso em: 24 mar. 2025.
+
+\hypertarget{Valentim2019}{}
+\bibitem{Valentim2019}
+VALENTIM, Leonardo. O Guarani no contexto das fronteiras sul-americanas: língua, identidade e comércio. \textit{Revista Línguas e Letras}, v. 20, n. 1, p. 237-255, 2019. Disponível em: \url{https://dspace.unila.edu.br/bitstream/handle/1/4755/Valentim_GuaraniFronteira.pdf}. Acesso em: 19 mar. 2025.
+\hypertarget{Vaswani2017}{}
+\bibitem{Vaswani2017}
+VASWANI, A. et al. \textit{Attention is All You Need}. Proceedings of the 31st International Conference on Neural Information Processing Systems, 2017.
+\hypertarget{Wolf2020}{}
+\bibitem{Wolf2020}
+WOLF, T. et al. \textit{Transformers: State-of-the-Art Natural Language Processing}. In: Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing: System Demonstrations. Association for Computational Linguistics, 2020. Disponível em: \url{https://arxiv.org/abs/1910.03771}. Acesso em: 31 mar. 2025.
+\hypertarget{Zampieri2022}{}
+\bibitem{Zampieri2022}
+ZAMPIERI, M. et al. \textit{On the Challenges of Low-Resource Machine Translation: A Survey}. ACM Computing Surveys, v. 55, n. 7, 2022. Disponível em: \url{https://arxiv.org/abs/2106.11988}. Acesso em: 1 abr. 2025.
+
+\hypertarget{Zoph2016}{}
+\bibitem{Zoph2016}
+ZOPH, B. et al. \textit{Transfer Learning for Low-Resource Neural Machine Translation}. In: Proceedings of EMNLP, 2016. Disponível em: \url{https://arxiv.org/abs/1604.02201}.
+
+
+\hypertarget{Zwartjes2021}{}
+\bibitem{Zwartjes2021}
+ZWARTJES, Otto. Anchieta’s grammar and humanistic renaissance history of grammar. \textit{Cadernos de Linguística}, [S. l.], v. 2, n. 3, p. 1-22, 2021. Disponível em: \url{https://cadernos.abralin.org/index.php/cadernos/article/view/356}. Acesso em: 19 mar. 2025.
+
+
+
+\hypertarget{Zuckermann2013}{}
+\bibitem{Zuckermann2013}
+ZUCKERMANN, G.; WALSH, M. \textit{Revival Linguistics and the Community: Towards a Sustainable Model for Language Revitalization}. Journal of Language Documentation Conservation, v. 7, 2013, p. 28-52.
+
+\end{thebibliography}
+
+
+\end{document}
